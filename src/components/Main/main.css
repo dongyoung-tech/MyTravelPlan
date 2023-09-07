@@ -1,0 +1,19 @@
+.Container{
+    margin-top: 100px;
+}
+.main-photo{
+    width: 100%;
+    height: 300px;
+    background-image: url("http://youngtour.dothome.co.kr/images/airport.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-top: 30px;
+}
+.main-photo h2{
+    text-align: center;
+    font-size: 3rem;
+}

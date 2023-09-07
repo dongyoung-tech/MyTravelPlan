@@ -1,0 +1,7 @@
+.recommend-box{
+    display: flex;
+    width:1200px;
+    height:300px;
+    margin: 20px auto;
+}
+.topic{ margin: 30px auto; width: 1200px; font-size: 2rem; text-align: center;} 

@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import RecommendPlace from "./components/Main/RecommendPlace/RecommendPlace";
+import Area from "./components/AreaSearch/Area";
+import CourseList from "./components/Course/CousreList";
+import FreeBoard from "./components/FreeBoard/FreeBoard";
+import FilterList from './components/Header/FilterList';
+import './components/Main/main.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
+const App = () => {
+    return (
+      <>
+      <Router basename="/">
+      <FilterList/>
+        <Routes>
+          <Route key ="Main" path="/" element={<RecommendPlace />} />
+          <Route key ="Area"   path="/Area/*" element={<Area />} />
+          <Route key ="Course"  path="/Course/*" element={<CourseList />} />
+          <Route key ="FreeBoard" path="/FreeBoard/*" element={<FreeBoard />} />
+        </Routes>
+      </Router>
+      </>
+    );
+  };
 export default App;
