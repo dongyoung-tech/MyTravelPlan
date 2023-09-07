@@ -37,7 +37,7 @@ const AreaSelect = () => {
   };
 
   return (
-    <div>
+    <div className='Area-Container'>
       <select onChange={(e) => handleCatChange(e.target.value)}>
         {areacode.map((item, index) => (
           <option value={item} key={item}>
@@ -52,6 +52,7 @@ const AreaSelect = () => {
         ))}
       </select>
       <button onClick={placeListHandler}>검색하기</button>
+      <h3>검색결과</h3>
       <div>
         <AreaPlace item={selected} key={areaPlaceKey} />
       </div>

@@ -1,0 +1,13 @@
+.Card-Container{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.place-box{
+    margin-bottom: 20px;
+}
+.Area-Container{
+    width: 1200px;
+    margin: 100px auto;
+}

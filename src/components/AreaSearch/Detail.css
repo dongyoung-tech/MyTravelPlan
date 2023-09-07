@@ -1,0 +1,32 @@
+.detail-con{
+    text-align: center;
+}
+.firstImage{
+    width: 700px;
+    object-fit: cover;
+    margin: 20px auto;
+}
+.overview{
+    width: 1000px;
+    margin: 10px auto;
+    text-align: left;
+}
+.detail-image-con{
+    width:1000px;
+    display: flex;
+    height: 250px;
+    margin: 0 auto;
+}
+.detail-image-con img{
+    width: 240px;
+    margin: 5px;
+    object-fit: cover;
+}
+.detail-map{
+    width:1000px;
+    height: 400px;
+    margin: 10px auto;
+}
+.infowindow{
+    text-align: center;
+}

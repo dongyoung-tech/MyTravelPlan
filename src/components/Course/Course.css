@@ -1,2 +1,16 @@
-.list{text-align: center;}
-.list-container{margin-top: 100px;}
+*{box-sizing: border-box;}
+.list{height:50px; text-align: center; border-bottom:1px solid #d2d2d2;padding:10px 0;}
+.list:first-child{
+    background-color: #828282;
+    color: white;
+}
+.col{
+    height: 100%;
+    width:25%;
+    float: left;
+}
+.list:not(:first-child):hover{
+    background-color: #f2f2f2;
+}
+.list-container{width: 1000px; margin:100px auto; text-align: center;}
+.list-con{width: 100%; margin-top:30px}

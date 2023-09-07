@@ -20,7 +20,10 @@ const CourseCon = () =>{
       },
        []); // 빈 배열로 설정하여 컴포넌트 마운트 시에만 호출되도록 함
     return(            
-        <div>
+        <div className="list-con">
+          <ul className="list">
+            <li className="col">번호</li><li className="col">제목</li><li className="col">제작자</li><li className="col">등록일</li>
+         </ul>
            {Data.map((item,index)=> {
           return <CourseItem key ={index} item={item}/>
         })}

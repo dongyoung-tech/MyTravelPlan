@@ -8,9 +8,10 @@ const FreeBoardItem = (props) =>{
     }
 
     return(
-        <div className="list" onClick={clickHandler}>
-            {props.item.num} {props.item.topic} {props.item.name} 
-        </div>
+        <ul className="list" onClick={clickHandler}>
+            <li className="col">{props.item.num}</li><li className="col">{props.item.name}</li>
+            <li className="col">{props.item.topic}</li> <li className="col">{props.item.regist}</li> 
+        </ul>
     )
 }
 

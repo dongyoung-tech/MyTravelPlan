@@ -19,7 +19,11 @@ const FreeBardList = () =>{
       },
        []); 
     return(
-        <div>
+      <div className="list-con">
+           <ul className="list">
+            <li className="col">글번호</li><li className="col">글쓴이</li>
+            <li className="col">글제목</li> <li className="col">등록일</li> 
+           </ul>
             {Data.map((item,idx)=>{
               return <FreeBoardItem key={idx} item={item}/> 
             })}
