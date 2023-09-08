@@ -1,7 +1,9 @@
 import React,{useState,useEffect} from "react";
 import FreeBoardItem from "./FreeBoardItem";
+import {useNavigate} from 'react-router-dom';
 
 const FreeBardList = () =>{
+   const user = JSON.parse(localStorage.getItem('userData'));
     const [Data,setData] = useState([]);
     const apiEndpoint = 'http://youngtour.dothome.co.kr/freeboard/freeboard-list.php';
     useEffect(() => {
@@ -18,6 +20,12 @@ const FreeBardList = () =>{
           );
       },
        []); 
+
+      const navigate = useNavigate();
+      const InsertMove = () =>{
+        navigate(`FreeBoardInsert`);
+      } 
+
     return(
       <div className="list-con">
            <ul className="list">
@@ -27,6 +35,7 @@ const FreeBardList = () =>{
             {Data.map((item,idx)=>{
               return <FreeBoardItem key={idx} item={item}/> 
             })}
+              {user&& <button onClick={InsertMove}>글쓰기</button>}
         </div>
     )
 }
