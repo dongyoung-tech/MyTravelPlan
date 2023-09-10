@@ -3,7 +3,7 @@ import FreeBoardItem from "./FreeBoardItem";
 import {useNavigate} from 'react-router-dom';
 
 const FreeBardList = () =>{
-   const user = JSON.parse(localStorage.getItem('userData'));
+   const user = JSON.parse(sessionStorage.getItem('userData'));
     const [Data,setData] = useState([]);
     const apiEndpoint = 'http://youngtour.dothome.co.kr/freeboard/freeboard-list.php';
     useEffect(() => {

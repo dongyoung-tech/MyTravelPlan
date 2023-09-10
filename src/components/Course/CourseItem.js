@@ -7,6 +7,7 @@ const CourseItem = (props) =>{
     const clickHandler = () => {
         navigate(`CourseView?num=${props.item.num}`);
     }
+    const user = JSON.parse(sessionStorage.getItem('userData'));
 
     return(
          <ul className="list" onClick={clickHandler}>

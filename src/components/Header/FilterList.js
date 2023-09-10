@@ -1,11 +1,11 @@
 // FilterList 컴포넌트
-import React ,{useState} from "react";
+import React from "react";
 import Filter from "./Filter";
 import './Filter.css'
 import LogOutButton from "../Login/LogOutButton";
 import LoginButton from "../Login/LoginButton";
 const FilterList = () =>{
-    const user = JSON.parse(localStorage.getItem('userData'));
+    const user = JSON.parse(sessionStorage.getItem('userData'));
     const topic=["","Area","Course","FreeBoard"];
     return(
         <div className="Nav-Bar">

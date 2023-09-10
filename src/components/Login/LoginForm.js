@@ -1,11 +1,12 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
+import {useNavigate} from 'react-router-dom';
 import './login.css';
-function LoginForm() {
+const LoginForm =()=>{
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-
+  const navigate = useNavigate();
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
   };
@@ -13,6 +14,9 @@ function LoginForm() {
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
+  const NewMem = () =>{
+    navigate('NewMember');
+  }
 
   const handleLogin = async (event) => {
     event.preventDefault();
@@ -22,8 +26,8 @@ function LoginForm() {
         username,
         password,
       });
-      localStorage.setItem('isLoggedIn', 'true');
-      localStorage.setItem('userData',JSON.stringify(response.data[0]));
+      sessionStorage.setItem('isLoggedIn', 'true');
+      sessionStorage.setItem('userData',JSON.stringify(response.data[0]));
       if(response.data != "Failed") window.location.href='/';
     } catch (error) {
       console.error('Login Failed:', error);
@@ -55,9 +59,10 @@ function LoginForm() {
           />
         </div>
         <div>
-          <button onClick={handleLogin}>Login</button>
         </div>
+        <button onClick={handleLogin}>Login</button>
       </form>
+      <span onClick={NewMem}>회원가입</span>
     </div>
   );
 }
