@@ -19,12 +19,12 @@
          
            map = new kakao.maps.Map(mapContainer, mapOption);
     
-        for (let i = 0; i < placeList.length - 1; i++) {
+        for (let i = 0; i < placeList.length; i++) {
             linePath.push(
             new kakao.maps.LatLng(placeList[i].mapx, placeList[i].mapy)
             );
         }
-        for (let i = 0; i < placeList.length - 1; i++) {
+        for (let i = 0; i < placeList.length; i++) {
             obj = new Object();
             obj.title = placeList[i].name;
             obj.lating = linePath[i];
@@ -46,8 +46,7 @@
             });
             marker.setMap(map);
         
-            var iwContent = `<div class='label'style="padding:5px;" color= "#598BF1"><div>
-        </div>${positions[i].title}</div>`,
+            var iwContent = `<div class='label'><div>${i+1}</div>${positions[i].title}</div>`,
                 iwPosition = new kakao.maps.LatLng(linePath[i].Ma, linePath[i].La);
         
             var customOverlay = new kakao.maps.CustomOverlay({

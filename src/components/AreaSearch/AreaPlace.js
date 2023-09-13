@@ -4,7 +4,7 @@ import './Area.css';
 
 const AreaPlace = (props) =>{
 const [Data,setData] = useState([]);  
-const [isLoading,setLoad] =useState(false); 
+const [isLoading,setLoad] = useState(false); 
   const apiKey = "yX8wx5nzKb42wtBThegyX7gb6G3xUCPCMfbzNYF1Gf0p0nSUn9ZeynPzokq9GNLvrFLmqQVbU9%2FQz9LckJpQLw%3D%3D";
   let apiEndpoint =`http://apis.data.go.kr/B551011/KorService1/areaBasedList1?serviceKey=${apiKey}&numOfRows=12&MobileOS=ETC&MobileApp=AppTest&_type=json&&arrange=Q
 &sigunguCode=${props.item[1]}
