@@ -8,19 +8,20 @@ const PlaceRipple = () => {
   const location = useLocation();
   const [isLoading, setIsLoading] = useState(true);
   const [contentid, setContent] = useState(1);
+  const [Data, setData] = useState([]); // 이곳에서 Data 상태를 정의
 
   const fetchComments = () => {
-    alert('repl-load');
+    getUrl();
     setIsLoading(true);
+    console.log(num);
     // param이 변경될 때마다 apiEndpoint를 생성
     const apiEndpoint = `http://youngtour.dothome.co.kr/repl/place-repl-list.php?parent=${num}`;
     fetch(apiEndpoint)
       .then((response) => response.json())
       .then((data) => {
-        const elem = data;
-        const newComment = { /* 새로운 댓글 데이터 */ };
-        setData((prevData) => [...prevData, newComment]);
+        setData(data); // Data 상태를 업데이트
         setIsLoading(false);
+        console.log(data);
       })
       .catch((error) => {
         console.log(error);
@@ -28,17 +29,14 @@ const PlaceRipple = () => {
       });
   };
 
-  useEffect(() => {
+  const getUrl = () => {
     // URL 쿼리 파라미터 가져오기
     const searchParams = new URLSearchParams(location.search);
     num = searchParams.get("contentid");
-
     // name 변수에 파라미터 값 1이 저장됩니다.
-    console.log(num);
     setContent(num);
-  }, [location.search]);
+  }
 
-  const [Data, setData] = useState([]);
   useEffect(() => {
     fetchComments(); // 댓글 목록을 처음에도 불러옴
   }, [num]);
@@ -52,8 +50,8 @@ const PlaceRipple = () => {
       />
       <div>
         {!isLoading &&
-          Data.map((el) => {
-            return <PlaceRippleList key="ripple" item={el} />;
+          Data.map((el, index) => {
+            return <PlaceRippleList key={index} item={el} />;
           })}
       </div>
     </div>

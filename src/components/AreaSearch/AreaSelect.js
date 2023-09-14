@@ -38,21 +38,23 @@ const AreaSelect = () => {
 
   return (
     <div className='Area-Container'>
-      <select onChange={(e) => handleCatChange(e.target.value)}>
-        {areacode.map((item, index) => (
-          <option value={item} key={item}>
-            {areaText[index]}
-          </option> ))}
-      </select>
-      <select onChange={(e) => handleCatChange2(e.target.value)}>
-        {optionData.map((option) => (
-          <option value={option.code} key={option.rum}>
-            {option.name}
-          </option>
-        ))}
-      </select>
-      <button onClick={placeListHandler}>검색하기</button>
-      <h3>검색결과</h3>
+      <h3 className='result-text'>검색결과</h3>
+      <div className='select-box'>
+        <select onChange={(e) => handleCatChange(e.target.value)}>
+          {areacode.map((item, index) => (
+            <option value={item} key={item}>
+              {areaText[index]}
+            </option> ))}
+        </select>
+        <select onChange={(e) => handleCatChange2(e.target.value)}>
+          {optionData.map((option) => (
+            <option value={option.code} key={option.rum}>
+              {option.name}
+            </option>
+          ))}
+        </select>
+        <button onClick={placeListHandler}>검색하기</button>
+      </div>
       <div>
         <AreaPlace item={selected} key={areaPlaceKey} />
       </div>

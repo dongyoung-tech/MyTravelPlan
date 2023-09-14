@@ -1,18 +1,24 @@
-*{font-family: 'Noto Sans KR', sans-serif; box-sizing: border-box;}
+*{ font-family: 'BMHANNAPro',sans-serif;box-sizing: border-box;}
+@font-face { /* 애플산돌고딕 폰트 적용 */
+    font-family: "BMHANNAPro";
+    src: url("../../asset/BMHANNAPro.ttf") format("truetype");
+    font-weight: normal;
+  } /* 이후 "SDGothic"으로 폰트 적용 가능 */
 .Container{
     margin-top: 100px;
 }
 .main-photo{
     width: 100%;
     height: 300px;
-    background-image: url("http://youngtour.dothome.co.kr/images/airport.jpg");
+    background-image: url('../../image/sunset.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    margin: 70px 0 60px 0;
+    margin: 60px auto;
+    flex-direction: column;
 }
 .banner{
     width: 100%;
@@ -28,7 +34,8 @@
 }
 .main-photo h2{
     text-align: center;
-    font-size: 3rem;
+    font-size: 2.5rem;
+    font-weight: 100;
 }
 .footer{
     width: 100%;
@@ -40,4 +47,13 @@
     justify-content: center;
     margin-top: 70px;
     padding: 20px;
+}
+.keyword{
+    width:600px;
+    height: 50px;
+    margin: 10px auto;
+}
+.keyword input{
+    width:100%;
+    height:100%;
 }

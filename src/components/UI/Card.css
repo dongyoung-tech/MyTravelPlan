@@ -1,7 +1,7 @@
 *{margin:0;padding:0; box-sizing: border-box;}
 .place-box{
     width:280px;
-    height:350px;
+    height:320px;
     margin: 30px 10px;
     overflow: hidden;
 }
@@ -12,6 +12,7 @@
     width:100%;
     overflow: hidden;
     height:75%;
+    border-radius: 5px;
 }
 .image-box img{
     width:100%;
@@ -24,6 +25,8 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    font-weight: 100;
+    margin-bottom: 3px;
 }
 .place-box h5{
     font-size: 0.9rem;
