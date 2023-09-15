@@ -7,7 +7,7 @@
     margin: 20px auto;
 }
 .overview{
-    width: 1000px;
+    width: 990px;
     margin: 10px auto;
     text-align: left;
 }
@@ -23,7 +23,7 @@
     object-fit: cover;
 }
 .detail-map{
-    width:1000px;
+    width:990px;
     height: 400px;
     margin: 10px auto;
 }

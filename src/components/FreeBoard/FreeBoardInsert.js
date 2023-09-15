@@ -33,7 +33,7 @@ const FreeBoardInsert = () =>{
       };
     
     return(
-        <div style={{marginTop:"200px"}}>
+        <div style={{marginTop:"50px"}}>
             <h2>글쓰기</h2>
              <input placeholder="제목" onChange={TopicHandler}></input>
             <textarea placeholder="글내용" onChange={TextHandler}></textarea>

@@ -1,12 +1,17 @@
 // FilterList 컴포넌트
-import React from "react";
+import React ,{useState} from "react";
 import Filter from "./Filter";
 import './Filter.css'
 import LogOutButton from "../Login/LogOutButton";
 import LoginButton from "../Login/LoginButton";
+import SearchFeild from "./Search-feild";
 const FilterList = () =>{
     const user = JSON.parse(sessionStorage.getItem('userData'));
     const topic=["","Area","Course","FreeBoard"];
+    const [isClicked , setClicked] = useState(false);
+    const handleClick = () => {
+        setClicked(!isClicked); // 클릭할 때마다 상태를 토글합니다.
+      }
     return(
         <div className="Nav-Bar">
             <div className="Nav-inner">
@@ -14,6 +19,11 @@ const FilterList = () =>{
                 <ul>
                    {topic.map((el,idx)=>{return <Filter key={idx} item={el}/>})}
                 </ul>
+                <span className='search-icon' onClick={handleClick}>
+                    <i className="fa-solid fa-magnifying-glass"></i>
+                </span>
+                {isClicked && <SearchFeild/>}
+                <span className="user-icon"><i className="fa-regular fa-user"></i></span>
                 {user&& <LogOutButton/>}
                 {!user && <LoginButton/>}
             </div>

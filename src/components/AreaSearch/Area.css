@@ -8,26 +8,54 @@
     margin-bottom: 20px;
 }
 .Area-Container{
-    width: 1200px;
-    margin: 100px auto;
+    width: 1000px;
+    margin: 50px auto;
 }
 .select-box{
-    background: #e8ecf7;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 10px 0;
     margin: 0 10px;
+    border-top:1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .select-box select{
     margin: 5px;
     border: none;
+    width: 100px;
+    text-align: center;
+    height: 30px;
+    border: 1px solid #d2d2d2;
+    padding: 5px;
 }
 .select-box button{
     border: none;
     border: 1px solid #d2d2d2;
     margin: 5px;
+    width: 70px;
+    height: 30px;
 }
 .result-text{
     font-size: 1.8rem;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+.Area-photo{
+    width: 100%;
+    height: 200px;
+    margin-top: 70px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-size: 40px;
+    font-weight: 100;
+    background-image: url('../../image/travel.jpg');
+}
+.Area-photo p{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to bottom,transparent,rgba(0,0,0,0.5));
+    width: 100%;
 }

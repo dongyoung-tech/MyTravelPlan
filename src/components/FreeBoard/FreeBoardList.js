@@ -27,6 +27,8 @@ const FreeBardList = () =>{
       } 
 
     return(
+      <>
+        <h2>게시판</h2>
       <div className="list-con">
            <ul className="list">
             <li className="col">글번호</li><li className="col">글쓴이</li>
@@ -37,6 +39,7 @@ const FreeBardList = () =>{
             })}
               {user&& <button onClick={InsertMove}>글쓰기</button>}
         </div>
+        </>
     )
 }
 

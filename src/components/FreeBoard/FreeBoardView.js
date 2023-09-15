@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import React, { useEffect, useState } from "react";
+import Content from "./Content";
 
 const FreeBoardView = () =>{
     let num;
@@ -35,8 +36,9 @@ const FreeBoardView = () =>{
       }, [num]);
     
     return(
+      
         <div>
-             {!isLoading && Data[0].content}
+        {!isLoading && <Content items={Data[0]}/>}
         </div>
     )
 }

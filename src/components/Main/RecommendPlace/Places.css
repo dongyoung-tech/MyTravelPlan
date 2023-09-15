@@ -1,6 +1,6 @@
 .recommend-box{
     display: flex;
-    width:1200px;
+    width:1000px;
     margin: 0 auto;
 }
 .topic{ margin: 30px auto 0; width: 1200px; font-size: 1.8rem; text-align: center;} 
