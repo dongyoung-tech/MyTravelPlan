@@ -2,7 +2,6 @@ import React from "react";
 import './Card.css';
 import {useNavigate} from 'react-router-dom';
 const Card = (props) =>{
-
     const navigate = useNavigate();
     const clickHandler = () => {
         navigate(`/Area/AreaDetail?contentid=${props.item.contentid}`);

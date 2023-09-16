@@ -1,0 +1,36 @@
+.repl-container{
+    width: 1000px;
+    margin:50px auto 10px;
+}
+.p_r_title{
+    width: 100%;
+    background-color: #f2f2f2;
+    text-align: left;
+    font-size: 20px;
+    line-height: 40px;
+    padding: 5px;   
+    height: 50px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+.p_list_con{
+    text-align: left;
+    padding: 20px 0;
+    border-bottom: 1px solid #d2d2d2;
+    
+}
+.p_list_content{
+    margin-top: 10px;
+}
+.p_list_user{
+    font-size: 18px;
+    margin-right: 5px;
+}
+.p_list_regist{
+    color: #808080;
+    font-size: 13px;
+}
+.p_delete{
+    color: #808080;
+    float: right;
+}

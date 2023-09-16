@@ -1,10 +1,18 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+import './Ripple.css';
 const PlaceRippleForm = (props) => {
   const user = JSON.parse(sessionStorage.getItem("userData"));
   const ClickHandler = async (event) => {
     event.preventDefault();
+    if(!user){
+      alert('로그인 후 이용해주세요!');
+      return;
+    }
+    if(document.querySelector('.repl-input').value.trim().length==0){
+      alert('한 글자 이상 작성해주세요');
+      return;
+    } 
     const username = user.name;
     const id = user.id;
 
@@ -39,10 +47,10 @@ const PlaceRippleForm = (props) => {
   };
 
   return (
-    <form>
-      <textarea className="repl-input"></textarea>
-      <button onClick={ClickHandler}>제출</button>
-    </form>
+    <div className="p_repl_form">
+        <textarea className="repl-input"></textarea>
+        <button onClick={ClickHandler}>제출</button>
+    </div>
   );
 };
 

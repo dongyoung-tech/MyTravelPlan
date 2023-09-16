@@ -42,18 +42,19 @@ const PlaceRipple = () => {
   }, [num]);
 
   return (
-    <div>
+    <div className="repl-container">
+      <p className="p_r_title">댓글</p>
+      <div>
+        {!isLoading &&
+          Data.map((el, index) => {
+            return <PlaceRippleList key={index} item={el} commentLoad={fetchComments}/>;
+          })}
+      </div>
       <PlaceRippleForm
         key="input"
         item={contentid}
         onCommentSubmit={fetchComments} // 댓글 제출 후 불러오기 함수 전달
       />
-      <div>
-        {!isLoading &&
-          Data.map((el, index) => {
-            return <PlaceRippleList key={index} item={el} />;
-          })}
-      </div>
     </div>
   );
 };
