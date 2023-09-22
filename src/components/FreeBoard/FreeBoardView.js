@@ -14,11 +14,10 @@ const FreeBoardView = () =>{
       navigate(`/FreeBoard/Modify?num=${Data[0].num}`);
     }
     useEffect(() => {
-      // URL 쿼리 파라미터 가져오기
+    
       const searchParams = new URLSearchParams(location.search);
       num = searchParams.get('num');
   
-      // name 변수에 파라미터 값 1이 저장됩니다.
       console.log(num);
     }, [location.search]);
 
