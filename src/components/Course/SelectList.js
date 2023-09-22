@@ -23,11 +23,11 @@ const SelectList = (props) => {
   }, [props.keyword]); // props.keyword를 의존성 배열에 추가
 
   return (
-    <div style={{ overflow: "scroll", width: '300px', height: "500px" }}>
+    <div className="select_list">
       {!isLoading && Data.map((item, index) => {
         return <SelectItem key={index} item={item} />
       })}
-      {isLoading && <div>검색 결과가 없습니다. 다른 지역을 선택해주세요.</div>}
+      {isLoading && <div>검색 결과가 없습니다. 다른 키워드를 입력해주세요.</div>}
     </div>
   );
 }

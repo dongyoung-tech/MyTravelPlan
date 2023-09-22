@@ -57,54 +57,57 @@ const JoinForm = () => {
   };
 
   return (
-    <div style={{ marginTop: '200px' }}>
-      <form onSubmit={handleFormSubmit}>
+    <div>
+      <img  className='j-logo'src="http://youngtour.dothome.co.kr/images/letter-logo.png"></img>
+      <form className="join_frm" onSubmit={handleFormSubmit}>
+        <div className="join-sub">
         <input
-          name="userid"
-          className="userid"
-          type="text"
-          placeholder="이름"
-          value={formData.userid}
-          onChange={handleInputChange}
-        />
-        <input
-          name="pass"
-          className="pass"
-          type="password"
-          placeholder="비밀번호"
-          value={formData.pass}
-          onChange={handleInputChange}
-        />
-        <input
-          name="username"
-          className="username"
-          type="text"
-          placeholder="닉네임"
-          value={formData.username}
-          onChange={handleInputChange}
-        />
-        <input
-          name="email"
-          className="email"
-          type="email"
-          placeholder="이메일"
-          value={formData.email}
-          onChange={handleInputChange}
-        />
-        <textarea
-          name="intro"
-          className="intro"
-          placeholder="자기 소개"
-          value={formData.intro}
-          onChange={handleInputChange}
-        ></textarea>
-        <input
-          name="upfile"
-          className="upfile"
-          type="file"
-          onChange={handleInputChange}
-        />
-        <button type="submit">회원가입</button>
+            name="userid"
+            className="userid"
+            type="text"
+            placeholder="이름"
+            value={formData.userid}
+            onChange={handleInputChange}
+          />
+          <input
+            name="pass"
+            className="pass"
+            type="password"
+            placeholder="비밀번호"
+            value={formData.pass}
+            onChange={handleInputChange}
+          />
+          <input
+            name="username"
+            className="username"
+            type="text"
+            placeholder="닉네임"
+            value={formData.username}
+            onChange={handleInputChange}
+          />
+          <input
+            name="email"
+            className="email"
+            type="email"
+            placeholder="이메일"
+            value={formData.email}
+            onChange={handleInputChange}
+          />
+          <textarea
+            name="intro"
+            className="intro"
+            placeholder="자기 소개"
+            value={formData.intro}
+            onChange={handleInputChange}
+          ></textarea>
+          <input
+            name="upfile"
+            className="upfile"
+            type="file"
+            onChange={handleInputChange}
+          />
+          </div>
+          <button type="submit">회원가입</button>
       </form>
     </div>
   );

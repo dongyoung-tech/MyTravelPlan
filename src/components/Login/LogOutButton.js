@@ -9,11 +9,7 @@ const LogOutButton = () =>{
     }
     console.log(user);
     return(
-        <div>
-            {user.name} 님
-            <img style={{width:"50px",borderRadius:"30px"}}src={`http://youngtour.dothome.co.kr/upload/${user.file_copied}?567`} alt='profile'></img>
             <button onClick={logoutHandler}>로그아웃</button>
-        </div>
     )
 }
 

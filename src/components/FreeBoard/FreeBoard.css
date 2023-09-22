@@ -57,17 +57,37 @@
 }
 .r_item_title{
     color: black;
-    font-size: 17px;
+    font-size: 15px;
 }
 .r_item_content{
     display:block;
     width: 100%;
-    margin: 10px 0 0 3px;
+    margin: 10px 0 0 0;
     color: black;
+    font-size: 13px;
 }
 .r_delete{
     float: right;
+    font-size:13px;
 }
 .r_item_regist{
     font-size: 13px;
+}
+.f_title_input{
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    padding: 10px;
+}
+.f_content_area{
+    width: 100%;
+    height: 200px;
+    margin-top: 20px;
+    resize: none;
+    padding: 10px;
+}
+.f_button{
+    width: 100px;
+    height: 50px;
+    margin-top: 10px;
 }

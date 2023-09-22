@@ -3,6 +3,7 @@ import FreeBoardList from './FreeBoardList';
 import { Routes, Route } from 'react-router-dom';
 import FreeBoardView from './FreeBoardView';
 import FreeBoardInsert from './FreeBoardInsert';
+import FreeBoardModify from './FreeBoardModify';
 import Footer from '../Main/Footer';
 const FreeBoard = () => { 
 
@@ -14,6 +15,7 @@ const FreeBoard = () => {
                     <Route path="/" element={<FreeBoardList/>} />
                     <Route path="/FreeBoardView" element={<FreeBoardView/>}/>
                     <Route path="/FreeBoardInsert" element={<FreeBoardInsert/>}/>
+                    <Route path = "/Modify" element ={<FreeBoardModify/>}/>
                 </Routes>
             </div>
             <Footer/>

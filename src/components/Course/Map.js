@@ -8,7 +8,6 @@
             let obj="";
             let linePath = [];
             let positions = []; 
-            console.log("받은 데이터",props.item[0]);
             const placeList = props.item[0].info;
 
             var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
@@ -68,7 +67,7 @@
         },[])
 
         return(
-            <div id="map" style={{width:'700px',height:'500px'}}></div>
+            <div id="map" style={{width:'100%',height:'100%'}}></div>
         )
         
     }

@@ -5,6 +5,7 @@ import './Filter.css'
 import LogOutButton from "../Login/LogOutButton";
 import LoginButton from "../Login/LoginButton";
 import SearchFeild from "./Search-feild";
+import LoginInfo from "./Login-Info";
 const FilterList = () =>{
     const user = JSON.parse(sessionStorage.getItem('userData'));
     const topic=["","Area","Course","FreeBoard"];
@@ -23,9 +24,7 @@ const FilterList = () =>{
                     <i className="fa-solid fa-magnifying-glass"></i>
                 </span>
                 {isClicked && <SearchFeild/>}
-                <span className="user-icon"><i className="fa-regular fa-user"></i></span>
-                {user&& <LogOutButton/>}
-                {!user && <LoginButton/>}
+                <span className="user-icon"><i className="fa-regular fa-user"></i><LoginInfo item={user}/></span>
             </div>
         </div>
     );

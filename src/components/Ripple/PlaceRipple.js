@@ -47,7 +47,7 @@ const PlaceRipple = () => {
       <div>
         {!isLoading &&
           Data.map((el, index) => {
-            return <PlaceRippleList key={index} item={el} commentLoad={fetchComments}/>;
+            return <PlaceRippleList key={index} item={el} commentLoad={fetchComments}/>
           })}
       </div>
       <PlaceRippleForm

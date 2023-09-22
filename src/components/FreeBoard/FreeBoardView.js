@@ -1,13 +1,18 @@
 import { useLocation } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import Content from "./Content";
+import {useNavigate} from 'react-router-dom';
 
 const FreeBoardView = () =>{
+  const navigate = useNavigate();
+  const user = JSON.parse(sessionStorage.getItem('userData'));
     let num;
     const location = useLocation();
     const [Data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-
+    const MoveHandler = () =>{
+      navigate(`/FreeBoard/Modify?num=${Data[0].num}`);
+    }
     useEffect(() => {
       // URL 쿼리 파라미터 가져오기
       const searchParams = new URLSearchParams(location.search);
@@ -39,6 +44,7 @@ const FreeBoardView = () =>{
       
         <div>
         {!isLoading && <Content items={Data[0]}/>}
+        {!isLoading && user && user.id == Data[0].id && <button onClick={MoveHandler}>수정하기</button>}
         </div>
     )
 }

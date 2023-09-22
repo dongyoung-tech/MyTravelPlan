@@ -65,7 +65,7 @@ const MakeMap = () =>{
         },[placeList]); 
 
     return(
-        <div style={{width:"700px",height:"500px",float:"left"}} id="Map">
+        <div style={{width:"100%",height:"100%"}} id="Map">
         </div>
     )
 }

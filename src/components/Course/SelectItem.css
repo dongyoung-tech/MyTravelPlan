@@ -1,13 +1,38 @@
 .Select-Item{
-    width:300px;
-    height: 300px;
+    width:100%;
+    height: 250px;
+    text-align: center;
+    font-weight: 100;
 }
 .Select-Item img{
     width:100%;
     height: 70%;
+    margin-bottom: 10px;
 }
 
 .Select-text-box{
     width:100%;
     height: 30%;
+}
+.c_s_con div{
+    padding-left:10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    flex-direction: column;
+}
+.c_s_img{
+    width: 100px;
+    height: 100px;
+    float: left;
+    border-radius: 5px;
+}
+.c_s_con h4{
+    float: left;
+    font-size: 1.1rem;
+}
+.c_item:hover{
+    box-shadow: 0 0 7px 2px #d2d2d2;
 }

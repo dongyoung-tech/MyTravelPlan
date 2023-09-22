@@ -12,7 +12,6 @@ serviceKey=${apiKey}&MobileOS=ETC&MobileApp=AppTest&_type=json&imageYN=Y&subImag
         .then(response => response.json())
         .then(data => {
             const elem = data.response.body.items.item;
-            console.log("이미지에 전할 데이터",data.response.body.items.item);
             setData(elem);
             if(elem == undefined) setIsLoading(true);
             else setIsLoading(false);

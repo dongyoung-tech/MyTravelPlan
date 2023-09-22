@@ -1,8 +1,8 @@
-*{ font-family: 'BMHANNAPro',sans-serif;box-sizing: border-box;}
+*{ font-family: 'Nanum',sans-serif;box-sizing: border-box; font-weight: bold;}
 @font-face { /* 애플산돌고딕 폰트 적용 */
-    font-family: "BMHANNAPro";
-    src: url("../../asset/BMHANNAPro.ttf") format("truetype");
-    font-weight: normal;
+    font-family: "Nanum";
+    src: url("../../asset/BmxsYIvpUqQIXk-9r2f09a43bSY.ttf") format("truetype");
+    font-weight: bold;
   } /* 이후 "SDGothic"으로 폰트 적용 가능 */
 .Container{
     margin-top: 100px;
@@ -35,7 +35,6 @@
 .main-photo h2{
     text-align: center;
     font-size: 2.5rem;
-    font-weight: 100;
 }
 .footer{
     width: 100%;

@@ -1,16 +1,19 @@
 import React from "react";
 import './SelectItem.css';
-import { useDispatch,useSelector } from "react-redux";
-import  { addItem, resetState } from '../../store/authActions';
+import { useDispatch } from "react-redux";
+import  { addItem } from '../../store/authActions';
 
 const SelectItem = (props) =>{
+    const searchString = "http://tong.visitkorea.or.kr/cms/resource/";
     const Dispatch = useDispatch();
     const clickHandler = () =>{
         const newItem = {
              name: props.item.title,
              mapx:props.item.mapy,
              mapy: props.item.mapx,
-             address:props.item.address
+             address:props.item.addr1,
+             imgurl:props.item.firstimage.replace(searchString, ""),
+             contentid:props.item.contentid
         }; // 추가하려는 객체
         Dispatch(addItem(newItem)); // 액션 디스패치
     }

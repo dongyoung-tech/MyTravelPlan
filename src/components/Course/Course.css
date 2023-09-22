@@ -15,3 +15,134 @@
 }
 .list-container{width: 1000px; margin:50px auto; text-align: center;}
 .list-con{width: 100%; margin-top:30px}
+.c_map_con{
+    width: 100%;
+    height: 500px;
+    float: left;
+}
+.c_info_con{
+    width: 100%;
+    float: left;
+    text-align: left;
+    font-weight: 100;
+    overflow-y: scroll;
+    padding: 30px 0;
+}
+.c_info_con>div{
+    margin: 0 0 20px 0;
+}
+.c_s_con{
+    width: calc(100% - 30px);
+    float: right;
+}
+.marker-img{
+    width: 40px;
+    height: 40px;
+    float: left;
+}
+
+.c_item{
+    height:100px;
+    width: 50%;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 10px;
+}
+.c_item p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    color:#808080;
+
+}
+.marker-img{
+    background-image: url("../../image/marker.png");
+    background-size: cover;
+    text-align: center;
+    padding-top: 3px;
+    margin-right: 7px;
+    line-height: 27px;
+}
+.Map-container{
+    margin: 0 auto;
+    height: 700px;
+    text-align: center;
+    position: relative;
+}
+#View{
+    width: 1000px;
+}
+.list-topic{margin:0 auto 10px}
+.list-user{
+    font-size: 1rem;
+    color: #808080;
+    margin:0 auto 10px
+}
+.course-topic{
+    margin: 50px auto 20px;
+    border: 1px solid #d2d2d2;
+    box-shadow: 0 0 7px 0px #d2d2d2;
+    padding: 10px;
+}
+.select_list{
+     overflow: scroll;
+      width:100%;
+      height:100%;  
+      float: left;
+}
+.select_con{
+    width: 300px;
+    height: 600px;
+    float: left;
+    padding: 10px;
+}
+.Map-view{
+    width: calc(100% - 300px);
+    height: calc(100% - 100px);
+    float: left;
+}
+
+.c_save_form{ 
+    width: 300px;
+    display: block;
+    position: absolute;
+    top: 80px;
+    right: 310px;
+    z-index: 1;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid black;
+    overflow: hidden;
+}
+.c_save_form button {
+    width: 50px;
+    height: 50px;
+    float: right;
+    background-color: #598bf1;
+    color: white;
+    border: none;
+    appearance: none;
+}
+.c_save_form input{
+    width: 80%;
+    float: left;
+    appearance: none;
+    height: 50px;
+    border: none;
+    padding: 5px;
+    outline: none;
+}
+.course-date{
+    padding-right: 20px;
+}
+#Make{
+    width: 100%;
+}
+.c_info_p_list{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+}

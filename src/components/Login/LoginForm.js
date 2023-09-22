@@ -33,32 +33,35 @@ const LoginForm =()=>{
       console.error('Login Failed:', error);
     }
   };
-
+  
+  const imageUrl = "http://youngtour.dothome.co.kr/images/letter-logo.png";
   return (
     <div>
-      <h2>Login</h2>
       <form className='login-con'>
-        <div  className='login-con'>
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            value={username}
-            onChange={handleUsernameChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={password}
-            onChange={handlePasswordChange}
-          />
-        </div>
-        <div>
+      <img src={imageUrl}></img>
+        <div className='login-box'>
+          <div  className='login-sub-con'>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              value={username}
+              onChange={handleUsernameChange}
+              placeholder='아이디'
+            />
+          </div>
+          <div>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={password}
+              onChange={handlePasswordChange}
+              placeholder='비밀번호'
+            />
+          </div>
+          <div>
+          </div>
         </div>
         <button onClick={handleLogin}>Login</button>
       </form>

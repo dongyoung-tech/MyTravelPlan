@@ -14,7 +14,6 @@
 .select-box{
     padding: 10px 0;
     margin: 0 10px;
-    border-top:1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .select-box select{
@@ -46,8 +45,7 @@
     background-position: center;
     color: white;
     font-size: 40px;
-    font-weight: 100;
-    background-image: url('../../image/travel.jpg');
+    background-image: url('../../image/baegyangsa-6366314_1920.jpg');
 }
 .Area-photo p{
     width: 100%;
