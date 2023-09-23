@@ -47,6 +47,7 @@ const User = () => {
          <h2>{!isLoad && userData.name}</h2>
          <h4>{!isLoad && userData.id}</h4>
          <p>{!isLoad && userData.intro}</p>
+         <button>                      </button>
          <h3 className="sub-topic">찜한 여행지</h3>
          <div className="cart-list">
             {!isLoad && <CartList item={userData.id}/>}
