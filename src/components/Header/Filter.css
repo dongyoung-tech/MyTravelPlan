@@ -12,7 +12,7 @@
     align-items: center;
 }
 .Nav-inner{
-    width: 1000px;
+    width: 900px;
     margin: 0 auto;
     height: 50px;
 }
@@ -20,8 +20,7 @@
     float: left;
 }
 .Nav-Bar li{
-    width: 100px;
-    padding: 0 10px;
+    padding: 0 20px;
     float: left;
     height: 100%;
     line-height: 50px;
@@ -68,7 +67,7 @@
     top:60px;
     border: 1px solid black;
     right:50%;
-    margin-right: -490px;
+    margin-right: -440px;
     background-color: white;
     padding: 10px;
 }
@@ -112,4 +111,7 @@
 }
 .login_info_con button{
     margin-top: 10px;
+}
+.icon-field{
+    float: right;
 }

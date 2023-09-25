@@ -33,7 +33,8 @@ const CourseReplItem = (props) =>{
     }
     return(
         <div className="c_repl_item">
-            <span className="c_r_user">{props.items.name}</span><span className="c_r_regist">{props.items.regist}</span>
+            <a href={`/User?user=${props.items.id}`}><span className="c_r_user">{props.items.name}</span></a>
+            <span className="c_r_regist">{props.items.regist}</span>
             <p className="c_r_content">{props.items.content}</p>
             {Del && <span className="c_r_delete" onClick={deleteHandler}>삭제하기</span>}
         </div>

@@ -6,22 +6,28 @@ import PlaceRipple from "../Ripple/PlaceRipple";
 import AroundPlace from "./AroundPlace/AroundPlace";
 import BlogSearch from "./BlogSearch";
 import CartButton from "../Cart/CartButton";
+import DetailIntro from "./DetailIntro";
+
 const PlaceDetail = (props) =>{
     const data =props.item[0];
     const overviewHTML = { __html: data.overview };
+    let imgurl = data.firstimage;
+    const user = JSON.parse(sessionStorage.getItem("userData")); 
     return(
      <>
          <div className='Area-photo'><p>여행지 상세정보</p></div>
         <div className ="detail-con">
             <h2 className="d_title">{data.title}</h2>
             <h3 className="d_address">{data.addr1}</h3>
-            {data && <CartButton item={data}/>}
-            <img className ="firstImage" src={data.firstimage}></img>
+            {user && data && <CartButton item={data}/>}
+           {imgurl &&  <img className ="firstImage" src={data.firstimage}/>}
+           {!imgurl && <div className="no-image"/>}
             <DetailImage item={data}/> 
             <div className="sub-con">
-                <h3 className="d_sub_title">정보</h3>
+                <h3 className="d_sub_title">소개</h3>
                 <p className="overview" dangerouslySetInnerHTML={overviewHTML}></p>
             </div>
+            <DetailIntro item={[data.contentid,data.contenttypeid]}/>
             <div className="sub-con">
                  <h3 className="d_sub_title">지도</h3>
                  <AreaMap item={data}/>

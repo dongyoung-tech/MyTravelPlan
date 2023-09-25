@@ -18,7 +18,7 @@ const CartList = (props) => {
           userid: userid,
         }
       );
-      if (response.data !== "Failed") {
+      if (response.data !== "no data") {
         console.log(JSON.parse(response.data[0].info));
         setData(JSON.parse(response.data[0].info));
         setLoad(false);
@@ -28,15 +28,17 @@ const CartList = (props) => {
     }
   };
 
-  if(Data == undefined){
+  if(Data.length==0){
     return <b>찜한 여행지가 없습니다.</b>
   }
   else{
     return (
-      <div>
+      <div className="cart-list">
+        <div>
           {!isLoad && Data.map((item,idx)=>{
-              return <CartItem item={item} key={idx}/>
-          })}
+                return <CartItem item={item} key={idx}/>
+            })}
+        </div>
       </div>
     );
   }

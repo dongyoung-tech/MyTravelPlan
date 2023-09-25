@@ -1,12 +1,20 @@
 .user-info{
     width: 1000px;
     margin: -110px auto 100px;
+}
+.user_p_info{
     text-align: center;
 }
-.profile-image{
+.profile-image,.non_profile_image{
     width: 100px;
     border-radius: 50px;
     margin: 0 auto;
+}
+.non_profile_image{
+    background-image: url("../../image/profile.png");
+    background-size: 100% 100%;
+    display: block;
+    height: 100px;
 }
 
 .cart-list{

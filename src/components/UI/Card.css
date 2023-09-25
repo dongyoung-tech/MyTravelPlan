@@ -1,10 +1,11 @@
 *{margin:0;padding:0; box-sizing: border-box;}
 .place-box{
-    width: 230px;
+    width: 313px;
     height: 300px;
     margin: 30px 10px;
     overflow: hidden;
     box-shadow: 0 0 6px #d2d2d2;
+    border-radius: 5px;
 }
 .place-box:hover{
     transition: 0.3s;
@@ -20,14 +21,14 @@
     object-fit: cover;
 }
 .place-box h4{
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
     margin-bottom: 3px;
 }
 .place-box h5{
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #598bf1;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -41,9 +42,13 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    text-align: center;
 }
 .place-box:hover img{
     transition: 0.3s;
     transform: scale(1.3);
 
+}
+.around_con .place-box{
+    height: 230px;
 }

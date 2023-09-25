@@ -7,7 +7,7 @@ let number = Math.floor(Math.random() * 17 + 1);
 const Places = props => {
   const [data, setData] = useState([]);
   const apiKey = "yX8wx5nzKb42wtBThegyX7gb6G3xUCPCMfbzNYF1Gf0p0nSUn9ZeynPzokq9GNLvrFLmqQVbU9%2FQz9LckJpQLw%3D%3D";
-  const apiEndpoint = `http://apis.data.go.kr/B551011/KorService1/areaBasedList1?serviceKey=${apiKey}&numOfRows=4&pageNo=1&MobileOS=ETC&MobileApp=AppTest&_type=json&&arrange=Q
+  const apiEndpoint = `http://apis.data.go.kr/B551011/KorService1/areaBasedList1?serviceKey=${apiKey}&numOfRows=3&pageNo=1&MobileOS=ETC&MobileApp=AppTest&_type=json&&arrange=Q
 &areaCode=${areacode[number]}
 &contentTypeId=${props.item}`;
   useEffect(() => {

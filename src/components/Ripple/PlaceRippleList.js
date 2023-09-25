@@ -34,7 +34,8 @@ const PlaceRippleList = (props) =>{
     }
     return(
         <div className="p_list_con">
-            <span className="p_list_user">{props.item.name}</span><span className="p_list_regist">{props.item.regist}</span>
+            <a href={`/User?user=${props.item.id}`}><span className="p_list_user">{props.item.name}</span></a>
+            <span className="p_list_regist">{props.item.regist}</span>
             <p className="p_list_content">{props.item.content}</p>
             {Del && <span className="p_delete" onClick={deleteHandler}>삭제하기</span>}
         </div>

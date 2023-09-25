@@ -27,7 +27,6 @@ const AreaSelect = () => {
     setCat(newCat);
   };
     const handleCatChange2 = (cat) => {
-      console.log(cat);
       setCat2(cat);
     };
 
