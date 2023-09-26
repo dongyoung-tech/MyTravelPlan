@@ -41,6 +41,7 @@ const User = () => {
   const modifyMove =()=>{
     window.location.href='Login/Modify';
   } 
+  if(isLoad) return;
   return (
     <>
     <div className="user-photo"><h2>회원정보</h2></div>
@@ -49,18 +50,22 @@ const User = () => {
            {userData && userData.file_copied && <img className="profile-image"
             src={`http://youngtour.dothome.co.kr/upload/${userData.file_copied}`} alt="프로필 이미지" />}
             {!userData || !userData.file_copied && <div className="non_profile_image"></div>}
-            <h2>{!isLoad && userData.name}</h2>
-            <h4>{!isLoad && userData.id}</h4>
-            <h4>{!isLoad && userData.email}</h4>
-            <p>{!isLoad && userData.intro}</p>
-            {user && <button onClick={modifyMove}>회원정보수정</button>}
-         </div> 
+           <div className="user_p_detail">
+            <p>이름 : {userData.name}</p>
+              <p>아이디 : {userData.id}</p>
+              <p>이메일 : {userData.email}</p>
+              {userData.id == user.id && user && <button onClick={modifyMove}>회원정보수정</button>}
+           </div>
+           <p className="user-intro">{userData.intro}</p>
+      </div> 
+      <div className="user_con_list">
          <h3 className="sub-topic">찜한 여행지</h3>
-          {!isLoad && <CartList item={userData.id}/>}
+          {<CartList item={userData.id}/>}
          <h3 className="sub-topic">만든 여행코스</h3>
          <div className="course-list">
-            {!isLoad && <CourseList item={userData.name}/>}
+            {<CourseList item={userData.name}/>}
          </div>
+       </div>
      </div>
     </>
   );

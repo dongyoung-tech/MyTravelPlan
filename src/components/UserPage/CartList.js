@@ -34,11 +34,9 @@ const CartList = (props) => {
   else{
     return (
       <div className="cart-list">
-        <div>
           {!isLoad && Data.map((item,idx)=>{
                 return <CartItem item={item} key={idx}/>
             })}
-        </div>
       </div>
     );
   }
