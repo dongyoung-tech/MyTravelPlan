@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import './Ripple.css';
+import Ratecon from "./Ratecon";
 const PlaceRippleForm = (props) => {
   const user = JSON.parse(sessionStorage.getItem("userData"));
   const ClickHandler = async (event) => {
@@ -15,9 +16,11 @@ const PlaceRippleForm = (props) => {
     } 
     const username = user.name;
     const id = user.id;
-
+    const checkedInput =  document.querySelector(`input[name="rate"]:checked`);
     try {
       const content = document.querySelector(".repl-input").value;
+      let InputValue = (checkedInput == null)?0:checkedInput.value;
+      let rate = InputValue;
       // 서버로 요청을 보냅니다.
       const response = await axios.post(
         "http://youngtour.dothome.co.kr/repl/place-repl-insert.php",
@@ -26,6 +29,7 @@ const PlaceRippleForm = (props) => {
           id,
           content,
           username,
+          rate
         },
         {
           headers: {
@@ -48,6 +52,7 @@ const PlaceRippleForm = (props) => {
 
   return (
     <div className="p_repl_form">
+        <Ratecon/>
         <textarea className="repl-input"></textarea>
         <button onClick={ClickHandler}>제출</button>
     </div>

@@ -13,7 +13,7 @@ const AreaPlace = (props) => {
     "yX8wx5nzKb42wtBThegyX7gb6G3xUCPCMfbzNYF1Gf0p0nSUn9ZeynPzokq9GNLvrFLmqQVbU9%2FQz9LckJpQLw%3D%3D";
   let apiEndpoint = `http://apis.data.go.kr/B551011/KorService1/areaBasedList1?serviceKey=${apiKey}&numOfRows=200&MobileOS=ETC&MobileApp=AppTest&_type=json&&arrange=Q
 &sigunguCode=${props.item[1]}
-&contentTypeId=${12}
+&contentTypeId=${props.item[2]}
 &pageNo=${1}
 &areaCode=${props.item[0]}`;
 

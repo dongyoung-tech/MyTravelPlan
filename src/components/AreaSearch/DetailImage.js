@@ -1,6 +1,8 @@
 import React ,{useState,useEffect}from "react";
 import ImageItem from "./ImageItem";
-const DetailImage =(props)=>{
+import DetailImageView from "./DetailImageView";  
+
+const DetailImage =(props)=>{  
 const [isLoading, setIsLoading] = useState(true);
 const [Data, setData] = useState([]);
     useEffect(() => {
@@ -27,11 +29,12 @@ serviceKey=${apiKey}&MobileOS=ETC&MobileApp=AppTest&_type=json&imageYN=Y&subImag
         <>
             {!isLoading && 
             <div className="detail-image-con">
-                {Data.slice(0,Ilength).map(item=>{ 
-                    return  <ImageItem item ={item}/>
+                {Data.slice(0,Ilength).map((item,idx)=>{ 
+                    return  <ImageItem item ={item} index={idx}/>
                 })}
             </div>
             }
+            <DetailImageView item={Data}/>
         </>
     )
 }

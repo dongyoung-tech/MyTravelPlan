@@ -59,10 +59,18 @@ a{color: black;text-decoration: none;}
 }
 .p_repl_form{
     margin-top: 10px;
-    height: 150px;
+    height: 190px;
     padding: 10px;
     background-color: #e8eaee;
     border: 1px solid #dcdde1;
+    position: relative;
+}
+.rate-con{
+    text-align: left;
+    margin-bottom: 10px;
+    background: white;
+    padding: 5px;
+    font-size: 0.9rem;
 }
 .p_repl_form textarea{
     width: 100%;
@@ -173,4 +181,49 @@ a{color: black;text-decoration: none;}
     color: #808080;
     float: right;
     width: calc(100% - 130px);
+}
+.detail-image-view-con{
+    display: none;
+    position: fixed;
+    z-index: 2;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+.detail-image-view{
+    max-width: 800px;
+    margin: 50px;
+    max-height: 90%;
+}
+.image-left-btn{
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    border: none;
+    left:50%;
+    background-color: #504e4e;
+    color: white;
+}
+.image-right-btn{
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    border: none;
+    background-color: #504e4e;
+    color: white;
+}
+.close-btn{
+    position: absolute;
+    top:50px;
+    right:50px;
+    width: 50px;
+    height: 50px;
+    background: none;
+    color: white;
+    border: none;
+    font-size: 3rem;
 }

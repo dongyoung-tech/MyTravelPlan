@@ -54,7 +54,7 @@ const User = () => {
             <p>이름 : {userData.name}</p>
               <p>아이디 : {userData.id}</p>
               <p>이메일 : {userData.email}</p>
-              {userData.id == user.id && user && <button onClick={modifyMove}>회원정보수정</button>}
+              {user && userData.id == user.id  && <button onClick={modifyMove}>회원정보수정</button>}
            </div>
            <p className="user-intro">{userData.intro}</p>
       </div> 

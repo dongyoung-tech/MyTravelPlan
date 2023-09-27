@@ -1,12 +1,16 @@
 import React , {useState,useEffect} from "react";
 import { useSelector } from "react-redux";
 import './SelectMap.css';
+import { deleteItem } from "../../store/authActions";
+import { useDispatch } from "react-redux";
+
 const {kakao} = window;
 const MakeMap = () =>{
     const placeList = useSelector((state) => state);
     const places = placeList.items;
     const currentItem = places[places.length-1]; 
     const linePath = [];
+    const dispatch = useDispatch();
     useEffect(()=>{
         document.getElementById("Map").innerHTML = "";
         var mapContainer = document.getElementById("Map"), // 지도를 표시할 div
@@ -32,8 +36,26 @@ const MakeMap = () =>{
             });
             marker.setMap(map);
 
-            var iwContent = `<div class='label'><div>${idx+1}</div>${places[idx].name}</div>`, // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-            iwPosition = new kakao.maps.LatLng(
+            const createDeleteHandler = (title) => () => {
+              console.log("삭제", title);
+              const newItem = {
+                name: title,
+              };
+              dispatch(deleteItem(newItem));
+            };
+          
+            var iwContent = document.createElement("div");
+            iwContent.className = "label";
+            iwContent.innerHTML = `
+              <div>${idx + 1}</div>
+              ${places[idx].name}
+            `;
+          
+            iwContent.addEventListener("click", () => {
+              createDeleteHandler(places[idx].name)();
+            });
+          // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+            var iwPosition = new kakao.maps.LatLng(
               linePath[idx].Ma,
               linePath[idx].La
             ); //인포윈도우 표시 위치입니다
