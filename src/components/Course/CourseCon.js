@@ -13,7 +13,6 @@ const CourseCon = () =>{
         fetch(apiEndpoint)
           .then(response => response.json())
           .then(data => {
-            console.log("fetch");
             
             const elem = data;
             setData(elem);

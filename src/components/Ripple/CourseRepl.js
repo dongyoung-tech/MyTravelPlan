@@ -15,7 +15,6 @@ const CouseRepl = (props) =>{
         .then((data) => {
           setData(data); // Data 상태를 업데이트
           setIsLoading(false);
-          console.log(data);
         })
         .catch((error) => {
           console.log(error);

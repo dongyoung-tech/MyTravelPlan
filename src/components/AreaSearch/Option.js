@@ -5,7 +5,6 @@ const Option = async (Cat) => {
   try {
     const response = await fetch(apiEndpoint);
     const data = await response.json();
-    console.log("fetch");
     const elem = data.response.body.items.item;
     return elem;
   } catch (error) {

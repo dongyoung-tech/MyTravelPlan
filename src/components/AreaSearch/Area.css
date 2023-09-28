@@ -82,3 +82,30 @@
     background: #598bf1;
     color: white;
 }
+
+@media(max-width:1000px){
+    .Area-Container{
+        width: 95%;
+    }
+   
+    .Area-photo{
+        margin-top: 50px;
+    }
+    .Card-Container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(230px , 1fr));
+        grid-gap: 20px;
+        padding-top:20px;
+        width: 100%;
+    }
+    .Card-Container .place-box{
+        height: 270px;
+        width: auto;
+        margin: 0;
+    }
+}
+@media(max-width:470px){
+    .select-box{
+        text-align: center;
+    }
+}

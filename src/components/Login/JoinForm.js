@@ -50,7 +50,6 @@ const JoinForm = () => {
         },
       });
       
-      console.log(response.data);
     } catch (error) {
       console.error('Join Failed:', error);
     }

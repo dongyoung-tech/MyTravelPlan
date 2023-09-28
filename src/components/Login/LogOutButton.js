@@ -7,7 +7,6 @@ const LogOutButton = () =>{
         sessionStorage.removeItem('isLoggedIn');
         window.location.reload();
     }
-    console.log(user);
     return(
             <button onClick={logoutHandler}>로그아웃</button>
     )

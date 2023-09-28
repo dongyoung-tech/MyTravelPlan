@@ -12,8 +12,8 @@ const DetailIntro = (props) =>{
           .then(response => response.json())
           .then(data => {
             const elem = data.response.body.items.item;
-            console.log("소개",elem);
             setData(elem);
+            console.log(elem);
             if(elem) setIsLoading(false);
           })
           .catch(error => {

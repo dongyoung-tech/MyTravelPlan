@@ -18,7 +18,6 @@ const FreeBoardView = () =>{
       const searchParams = new URLSearchParams(location.search);
       num = searchParams.get('num');
   
-      console.log(num);
     }, [location.search]);
 
     useEffect(() => {

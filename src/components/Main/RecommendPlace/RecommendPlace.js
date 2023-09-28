@@ -4,9 +4,9 @@ import '../main.css';
 import { useSelector } from "react-redux";
 import {useNavigate} from 'react-router-dom';
 import Footer from "../Footer";
+import SideButton from "../../Header/SideButton";
 const RecommendPlace = props =>{
   const navigate = useNavigate();
-  console.log(useSelector((state)=>state));
   const KeyWordHandler =()=>{
     const input = document.querySelector('.keyword input');
     if(input.value.trim().length ==0) {

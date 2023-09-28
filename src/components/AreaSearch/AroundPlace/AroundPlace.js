@@ -25,7 +25,6 @@ serviceKey=${apiKey}&numOfRows=4&pageNo=1&MobileOS=ETC&MobileApp=AppTest&_type=j
         const elem = data.response.body.items.item;
         setData(elem);
         setIsLoading(false);
-        console.log("주변장소",elem);
       })
       .catch(error => {
         console.log(error);

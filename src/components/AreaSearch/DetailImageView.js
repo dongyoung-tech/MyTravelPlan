@@ -4,18 +4,15 @@ const DetailImageView = props =>{
     const ClickHandler = () =>{
         document.querySelector('.detail-image-view-con').style.display='none';
     }
-    console.log("이미지받음",props.item);
     const ImageLeftHandler = () =>{
         let imgnum = parseInt(document.querySelector('.detail-image-view').getAttribute('value'));
         if(imgnum == props.item.length-1) imgnum = -1;
-        console.log(imgnum);
         document.querySelector('.detail-image-view').setAttribute('value',imgnum+1);
         document.querySelector('.detail-image-view').setAttribute('src',props.item[imgnum+1].originimgurl);
     }
     const ImageRightHandler = () =>{
         let imgnum = parseInt(document.querySelector('.detail-image-view').getAttribute('value'));
         if(imgnum == 0) imgnum = props.item.length;
-        console.log(imgnum);
         document.querySelector('.detail-image-view').setAttribute('value',imgnum-1);
         document.querySelector('.detail-image-view').setAttribute('src',props.item[imgnum-1].originimgurl);
     }

@@ -15,7 +15,6 @@ const CourseView = () => {
     num = searchParams.get('num');
 
     // name 변수에 파라미터 값 1이 저장됩니다.
-    console.log(num);
   }, [location.search]);
 
   const [Data, setData] = useState([]);
@@ -28,7 +27,6 @@ const CourseView = () => {
       .then(response => response.json())
       .then(data => {
         const elem = data;
-        console.log(data);
         setData(elem);
         setIsLoading(false);
       })

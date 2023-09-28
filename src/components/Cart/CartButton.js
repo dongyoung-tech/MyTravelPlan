@@ -17,7 +17,7 @@ const CartButton = (props) =>{
           });
           if (response.data !== "no data") {
             const parsedData = response.data;
-            console.log("받은",response.data);
+
             setData(JSON.parse(parsedData[0].info));
           } else if (response.data === "no data") {
             console.log('장바구니 아직 안만듬');

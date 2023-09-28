@@ -31,12 +31,20 @@ const PlaceRippleList = (props) =>{
           } catch (error) {
             console.error("Insert Failed:", error);
           }
+    
+    }
+    const setRate = () =>{
+      let buttons=[];
+      for(var i=0; i<props.item.rate; i++){
+        buttons.push(<i class="fa-solid fa-star"></i>);
+      }
+      return buttons;
     }
     return(
         <div className="p_list_con">
             <a href={`/User?user=${props.item.id}`}><span className="p_list_user">{props.item.name}</span></a>
             <span className="p_list_regist">{props.item.regist}</span>
-            <span className="p_list_regist"> 평점 {props.item.rate}</span>
+            <span className="p_list_rate">{setRate()}</span>
             <p className="p_list_content">{props.item.content}</p>
             {Del && <span className="p_delete" onClick={deleteHandler}>삭제하기</span>}
         </div>

@@ -43,12 +43,20 @@ a{color: black;text-decoration: none;}
 }
 .d_title{
     font-size: 30px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     margin-top: 50px;
 }
 .d_address{
     font-size: 17px;
     margin-top: 10px;
     color: #504e4e;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .d_sub_title{
     text-align: left;
@@ -226,4 +234,105 @@ a{color: black;text-decoration: none;}
     color: white;
     border: none;
     font-size: 3rem;
+}
+
+@media(max-width:1000px){
+    .detail-con{
+        width: 100%;
+        padding: 0 20px;
+    }
+    .firstImage{
+        width: 100%;
+    }
+    .detail-image-con {
+        display: flex;
+        width: 100%;
+        height: 15vw;
+        min-height: 100px;
+    }
+    .detail-image-con img{
+        width: calc(94%/4);
+    height: 85%;
+    margin: 1%;
+    }
+    .detail-image-con img:first-child{
+        margin-left: 0;
+    }
+    .detail-image-con img:last-child{
+        margin-right: 0;
+    }
+    .around_con{
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+    .around_con .place-box{
+        position: relative;
+        width: 48%;
+        margin-left: 10px;
+        height: 230px;
+        margin: 1%;
+    }
+    .around_con .place-box .image-box{
+        height: 60%;
+    }
+    .around_con .place-box .text-box{
+        height: 40%;
+    }
+    .sub-con{
+        width:100%;
+    }
+    .blog-sub-con{
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .blog-sub-con a{
+        width: 48%;
+        margin: 1%;
+    }
+    .Intro-item{
+        width: 100%;
+        padding: 0;
+    }
+    .d_title{
+        font-size: 1.5rem;
+    }
+    .d_address{
+        font-size: 1rem;
+    }
+    .detail-image-view{
+        max-width: 90%;
+    }
+    .image-left-btn{
+        position: fixed;
+        height: 50px;
+        width: 50px;
+        top:50%;
+        margin-top:-25px;
+        left: 10px;
+    }
+    .image-right-btn{
+        position: fixed;
+        height: 50px;
+        width: 50px;
+        top:50%;
+        margin-top:-25px;
+        right: 10px;
+    }
+}
+@media(max-width:600px){
+    .around_con .place-box{
+       height: 150px;
+    }
+    .Intro-item strong{
+        width: 100px;
+    }
+    .Intro-item span{
+        width: calc( 100% - 110px);
+    }
+    .d_title{
+        font-size: 1.2rem;
+    }
+    .d_address{
+        font-size: 1rem;
+    }
 }

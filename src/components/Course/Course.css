@@ -145,3 +145,10 @@
     flex-wrap: wrap;
     padding: 5px;
 }
+
+.list-topic,.list-user,.course-date{
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

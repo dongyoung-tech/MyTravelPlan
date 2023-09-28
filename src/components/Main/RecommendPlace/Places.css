@@ -3,4 +3,59 @@
     width:1000px;
     margin: 0 auto;
 }
-.topic{ margin: 30px auto 0; width: 1200px; font-size: 1.8rem; text-align: center;} 
+.topic{ margin: 30px auto 0; width: 1000px; font-size: 1.8rem; text-align: center;} 
+@media (max-width:1000px){
+    .topic{
+        width: 100%;
+    }
+    .recommend-box{
+        width: 100%;
+        flex-wrap: wrap;
+        padding: 0 50px;
+    }
+    .recommend-box .place-box{
+        width: calc(50% - 20px);
+        height: 30vw;
+    }
+    .recommend-box .image-box {
+        height: 65%;
+    }
+    .recommend-box .text-box {
+        height: 35%;
+    }
+    .main-photo{
+        margin-top: 40px;
+    }
+
+}
+@media(max-width:600px){
+    .topic{
+        font-size: 1.5rem;
+        margin-top: 20px;
+    }
+    .recommend-box{
+        padding: 10px;
+    }
+    .recommend-box .place-box{
+        margin-top: 10px;
+        height: 40vw;
+    }
+    .recommend-box .text-box h4{
+        font-size: 0.9rem;
+    }
+    .recommend-box .text-box h5{
+        font-size: 0.8rem;
+    }
+}
+@media(max-width:400px){
+    .recommend-box{
+        padding: 5px;
+    }
+    .recommend-box .image-box{
+        height: 60%;
+    }
+    .recommend-box .text-box{
+        height: 40%;
+    }
+    
+}

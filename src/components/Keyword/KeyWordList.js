@@ -3,7 +3,6 @@ import Card from "../UI/Card.js";
 import '../AreaSearch/Area.css';
 
 const KeyWordList = (props) =>{
-    console.log(props.item);
     const [Data,setData] = useState([]);  
     const [isLoading,setLoad] = useState(false); 
     const [pageNo, setPageNo] = useState(1); // 현재 페이지 번호;

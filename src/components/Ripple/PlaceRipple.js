@@ -13,7 +13,6 @@ const PlaceRipple = () => {
   const fetchComments = () => {
     getUrl();
     setIsLoading(true);
-    console.log(num);
     // param이 변경될 때마다 apiEndpoint를 생성
     const apiEndpoint = `http://youngtour.dothome.co.kr/repl/place-repl-list.php?parent=${num}`;
     fetch(apiEndpoint)

@@ -26,10 +26,11 @@
     font-size: 15px;
     margin-right: 5px;
 }
-.p_list_regist{
+.p_list_regist , .p_list_rate{
     color: #808080;
     font-size: 13px;
 }
+.p_list_rate{color: gold; margin-left:5px;}
 .p_delete{
     color: #808080;
     float: right;

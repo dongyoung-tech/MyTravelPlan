@@ -11,7 +11,6 @@ const CourseList = (props) =>{
         .then(response => response.json())
         .then(data => {
           const elem = data;
-          console.log('유저 코스데이터',elem)
           setData(elem);
           setIsLoading(false);
         })

@@ -19,7 +19,6 @@ const CartList = (props) => {
         }
       );
       if (response.data !== "no data") {
-        console.log(JSON.parse(response.data[0].info));
         setData(JSON.parse(response.data[0].info));
         setLoad(false);
       }

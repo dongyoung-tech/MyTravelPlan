@@ -37,7 +37,6 @@ const MakeMap = () =>{
             marker.setMap(map);
 
             const createDeleteHandler = (title) => () => {
-              console.log("삭제", title);
               const newItem = {
                 name: title,
               };
