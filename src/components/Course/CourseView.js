@@ -52,6 +52,10 @@ const CourseView = () => {
                 return <SelectedItem idx = {idx}item={item}/>
             })}
             </div>
+            <div className="c_intro">
+              <h4>코스 소개</h4>
+            <p>{!isLoading && Data[0].intro}</p>
+            </div>
             {!isLoading && <CourseRepl item={Data[0]}/>}
         </div>
     </div>

@@ -182,13 +182,25 @@
 
     .keyword{
         width: 90%;
+        margin-top: 10px;
         height: 35px;
     }
     .main-photo h2{
-        font-size: 5vw;
+        font-size: 4.5vw;
     }
     .main-photo{
         height:35vw;
         min-height: 200px;
+    }
+}
+@media(max-width:700px){
+    .main-photo{
+        padding-top: 20px;
+    }
+}
+@media(max-width:500px){
+   
+    .main-photo h2{
+        font-size:1.3rem;
     }
 }

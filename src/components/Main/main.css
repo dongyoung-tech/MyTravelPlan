@@ -9,8 +9,8 @@
 }
 .main-photo{
     width: 100%;
-    height: 300px;
-    background-image: url('../../image/sunset.jpg');
+    height: 350px;
+    background-image: url('../../image/seoul.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -26,7 +26,7 @@
     background-image: url("http://youngtour.dothome.co.kr/images/car.jpg");
     background-size: cover;
     background-position: center;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     color: white;
@@ -50,7 +50,7 @@
 .keyword{
     width:600px;
     height: 50px;
-    margin: 10px auto;
+    margin: 30px auto;
     background-color: white;
     border-radius: 10px;
     overflow: hidden;

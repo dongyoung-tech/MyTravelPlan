@@ -7,7 +7,7 @@ import LoginInfo from "./Login-Info";
 import SideButton from "./SideButton";
 const FilterList = () =>{
     const user = JSON.parse(sessionStorage.getItem('userData'));
-    const topic=["","Area","Course","FreeBoard"];
+    const topic=["Area","Course","FreeBoard"];
     const [isClicked , setClicked] = useState(false);
     const handleClick = () => {
         setClicked(!isClicked); // 클릭할 때마다 상태를 토글합니다.
@@ -19,7 +19,7 @@ const FilterList = () =>{
     return(
         <div className="Nav-Bar">
             <div className="Nav-inner">
-            <img className="logo" src='http://youngtour.dothome.co.kr/images/letter-logo.png' alt='logo'></img>
+            <a href='/'><img className="logo" src='http://youngtour.dothome.co.kr/images/letter-logo.png' alt='logo'></img></a>
                 <ul>
                    {topic.map((el,idx)=>{return <Filter key={idx} item={el}/>})}
                 </ul>

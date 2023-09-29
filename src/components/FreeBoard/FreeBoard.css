@@ -91,6 +91,7 @@
     height: 50px;
     margin-top: 10px;
 }
+
 @media(max-width:1050px){
 .list-container{
     width: 100%;
@@ -131,7 +132,9 @@
     width: 300px;
 }
 .c_save_form{
-    width: 80%;
+    width: 95%;
+    position: initial;
+    margin: 0 auto;
 }
 .c_save_form input{
     height: 30px;

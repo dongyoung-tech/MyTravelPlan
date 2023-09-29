@@ -104,8 +104,20 @@
         margin: 0;
     }
 }
-@media(max-width:470px){
-    .select-box{
-        text-align: center;
+
+@media(max-width:600px){
+    .select-box select{
+        margin:1%;
+        width: 48%;
+    }
+    .select-box button {
+        margin: 1%;
+        width: 48%;
+    }
+    .Area-photo{
+        height: 150px;
+    }
+    .Area-photo p{
+        font-size: 2rem;
     }
 }
