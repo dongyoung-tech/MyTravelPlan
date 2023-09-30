@@ -43,7 +43,12 @@ const CourseView = () => {
           {!isLoading && <h3 className='list-user'>{Data[0].user}</h3>}    
           {!isLoading && <div className="course-date">📅 <span>{Data[0].startdate}</span>~<span>{Data[0].lastdate}</span></div>}
        </div>
+       <div className="c_intro">
+              <h4>코스 소개</h4>
+            <p>{!isLoading && Data[0].intro}</p>
+        </div>
         <div className="c_map_con">
+           <h4>지도</h4>
            {!isLoading && <Map key="map" item={Data} />}
         </div>
         <div className="c_info_con">
@@ -51,10 +56,6 @@ const CourseView = () => {
             {!isLoading && Data[0].info.map((item,idx)=>{
                 return <SelectedItem idx = {idx}item={item}/>
             })}
-            </div>
-            <div className="c_intro">
-              <h4>코스 소개</h4>
-            <p>{!isLoading && Data[0].intro}</p>
             </div>
             {!isLoading && <CourseRepl item={Data[0]}/>}
         </div>

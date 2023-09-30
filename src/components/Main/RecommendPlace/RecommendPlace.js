@@ -15,6 +15,12 @@ const RecommendPlace = props =>{
     }
     navigate(`/keyword?keyword=${document.querySelector('.keyword input').value}`);
   }
+  const AreaCodeHandlier = ()=>{
+      let areacode = [0, 1, 2, 3, 4, 5, 6, 7, 8, 31, 32, 33, 34, 35, 36, 37, 38, 39];
+    let number = Math.floor(Math.random() * 17 + 1);
+    
+    return areacode[number];
+  }
     return(
         <div>
           <div className="main-photo"><h2>MYTravelPlan<br></br>나만의 여행코스를 만들어 보세요!</h2>
@@ -23,10 +29,10 @@ const RecommendPlace = props =>{
                <button onClick={KeyWordHandler}><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
           </div>
-          <Places item="12"/>
-          <Places item="39"/>
+          <Places item="12" area={AreaCodeHandlier()}/>
+          <Places item="39" area={AreaCodeHandlier()}/>
           <div className="banner"><h2>MYTravelPlan<br></br>나만의 여행코스를 만들어 보세요!</h2></div>
-          <Places item="32"/>
+          <Places item="32" area={AreaCodeHandlier()}/>
           <Footer/>
         </div>
           

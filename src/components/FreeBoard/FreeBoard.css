@@ -1,5 +1,6 @@
 .freeboard_con{
     text-align: left;
+    padding: 10px;
 }
 .f_title{
     width: 100%;
@@ -92,7 +93,16 @@
     margin-top: 10px;
 }
 
-@media(max-width:1050px){
+@media(max-width:1110px){
+.course_search_form{
+    width: 100%;
+}
+.course_search_form button{
+    width: 70px;
+}
+.course_search_form input{
+    width: calc(100% - 70px);
+}
 .list-container{
     width: 100%;
 }
@@ -116,11 +126,13 @@
 }
 .c_save_form{
     right: 10px;
+    opacity: 1;
 }
 .select_con{
     width: 100%;
     overflow-x: scroll;
-    height: 300px;
+    height: 310px;
+    margin-top: 20px;
 }
 .select_list{
     display: flex;
@@ -132,13 +144,26 @@
     width: 300px;
 }
 .c_save_form{
-    width: 95%;
+    width: 100%;
     position: initial;
-    margin: 0 auto;
+    padding: 10px;
+    border: none;
+    border-radius: 0;
+    float: left;
+    margin:0px auto;
+    margin-bottom: 50px;
+}
+.c_save_form textarea{
+    border: 1px solid #d2d2d2;
 }
 .c_save_form input{
     height: 30px;
-    width: calc(100% - 50px);
+    width: 100%;
+    margin: 5px 0;
+    border: 1px solid #d2d2d2;
+}
+.course-intro{
+    margin-top: 5px;
 }
 .c_save_form button{
     height: 30px;

@@ -7,15 +7,26 @@
 .Select-Item img{
     width:100%;
     height: 70%;
-    margin-bottom: 10px;
     object-fit: cover;
 }
 
 .Select-text-box{
     width:100%;
     height: 30%;
+    padding: 10px;
 }
-
+.Select-text-box h4{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.Select-text-box h5{
+    font-size: 0.9rem;
+    color:#808080;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 .c_s_con div{
     padding-left:10px;
     text-overflow: ellipsis;
@@ -25,11 +36,18 @@
     height: 100px;
     flex-direction: column;
 }
+.c_s_con div h4, .c_s_con div p{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+} 
+.c_s_con div p{color: #808080;}
 .c_s_img{
     width: 100px;
     height: 100px;
     float: left;
     border-radius: 5px;
+    object-fit: cover;
 }
 .c_s_con h4{
     float: left;
@@ -58,6 +76,10 @@
     .c_s_con div{
         height: auto;
     }
+    .c_s_con{
+        width: 100%;
+        padding: 5px;
+    }
     .c_item{
         height: 220px;
         width: 100%;
@@ -66,6 +88,7 @@
     .c_info_p_list{
         display: grid;
         grid-template-columns: repeat(auto-fill,minmax(200px , 1fr));
+        padding: 0;
     }
     .marker-img{
         float: none;

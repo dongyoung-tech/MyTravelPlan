@@ -1,9 +1,9 @@
-*{ font-family: 'Nanum',sans-serif;box-sizing: border-box; font-weight: bold;}
+*{ font-family: 'Nanum',sans-serif;box-sizing: border-box; font-weight: 100;}
 @font-face { /* 애플산돌고딕 폰트 적용 */
     font-family: "Nanum";
     src: url("../../asset/BmxsYIvpUqQIXk-9r2f09a43bSY.ttf") format("truetype");
-    font-weight: bold;
-  } /* 이후 "SDGothic"으로 폰트 적용 가능 */
+    font-weight: 500;
+  }
 .Container{
     margin-top: 100px;
 }
@@ -52,7 +52,7 @@
     height: 50px;
     margin: 30px auto;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 30px;
     overflow: hidden;
 }
 .keyword input{
@@ -86,7 +86,7 @@
     text-align: center;
     z-index: 2;
 }
-.login-menu img{
+.login-menu img ,.login-menu .non_profile_image{
     margin: 10px auto;
     float: none;
 }
