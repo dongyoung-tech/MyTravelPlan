@@ -13,8 +13,8 @@
 }
 
 .profile-image,.non_profile_image{
-    width: 100px;
-    border-radius: 50px;
+    width: 130px;
+    border-radius: 100px;
     float: left;
     margin-right: 20px;
 }
@@ -36,6 +36,7 @@
 .user-intro{
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .cart-list{
     width: 100%;
@@ -94,6 +95,7 @@
 .course-list{
     display: flex;
     height: 100px;
+    flex-wrap: wrap;
 }
 .c_l{
     display: flex;
@@ -153,4 +155,62 @@
 }
 .user-info p{
     margin: 5px;
+}
+.user_p_info button{
+    width: 100px;
+    height: 30px;
+    background-color: #598bf1;
+    color: white;
+    border: none;
+}
+@media(max-width:1000px){
+    .user-photo{
+        margin: 50px auto;
+    }
+    .user-info{
+        width: 100%;
+        padding:20px;
+    }
+    .cart-list{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(200px , 1fr));
+        grid-gap: 20px;
+        padding-top:20px;
+        width: 100%;
+    }
+    .cart-item img{
+        object-fit: cover;
+    }
+    .cart-item{
+        width: 100%;
+        margin: 0;
+    }
+    .profile-image{
+        margin: 0 auto;
+    }
+    .user_p_detail{
+        border: none;
+        width: 100%;
+        padding: 0;
+    }
+    .user_p_info{
+        flex-wrap: wrap;
+        flex-direction: column;
+        text-align: center;
+    }
+    .user_p_info button{
+        margin: 10px auto;
+    }
+    .course-list{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(200px , 1fr));
+        grid-gap:20px;
+        padding-top:20px;
+        width: 100%;
+        height: auto;
+    }
+    .c_l{
+        width: 100%;
+    }
+    
 }

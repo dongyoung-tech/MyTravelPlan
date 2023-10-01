@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "../../UI/Card";
 import './Places.css';
-
+import Loading from "../../UI/Loading";
 
 const Places = props => {
   const [data, setData] = useState([]);
@@ -19,6 +19,9 @@ let blankIdx;
         blankIdx = elem[0].addr1.indexOf(" ");
         setName(elem[0].addr1.substring(0, blankIdx));
         setData(elem);
+        for(var i=0; i<3; i++){
+          document.querySelectorAll('.loading-con')[i].classList.add('hide');
+        }
       })
       .catch(error => {
         console.log(error);
@@ -27,6 +30,7 @@ let blankIdx;
   const topic = (props.item == 12)? "관광지":(props.item == 32)?"숙박":"식당";
   return (
     <div>
+      <Loading/>
       <h2 className="topic">{areaName} 추천 {topic}</h2>
       <h4 className="sub-a-topic">랜덤지역 추천 {topic} 입니다</h4>
       <div className="recommend-box">

@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from "react";
 import Card from "../UI/Card.js";
 import '../AreaSearch/Area.css';
+import Loading from "../UI/Loading.js";
 
 const KeyWordList = (props) =>{
     const [Data,setData] = useState([]);  
@@ -17,6 +18,7 @@ const KeyWordList = (props) =>{
       .then(data => {
         const elem = data.response.body.items.item;
         setData(elem);
+        document.querySelector('.loading-con').classList.add('hide');
         if(elem == undefined) setLoad(true);
         else setLoad(false);
         setTotalDataCount(elem.length);
@@ -87,6 +89,7 @@ const KeyWordList = (props) =>{
     return(
       <>
         <div className="Card-Container">
+           <Loading/>
            {!isLoading && getCurrentPageData().map((item, index) => {
           return <Card key={index} item={item} />;
         })}

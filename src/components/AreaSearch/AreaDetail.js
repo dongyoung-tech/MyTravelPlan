@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import PlaceDetail from "./PlaceDetail";
+import Loading from "../UI/Loading";
 
 const AreaDetail = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -19,6 +20,7 @@ const AreaDetail = () => {
       .then(data => {
         const elem = data.response.body.items.item;
         setData(elem);
+        document.querySelector('.loading-con').classList.add('hide');
         setIsLoading(false);
       })
       .catch(error => {
@@ -28,9 +30,10 @@ const AreaDetail = () => {
   }, [param]);
 
   return (
-    <>
+    <div className="Area_Detail_con">
+      <Loading/>
       {!isLoading && <PlaceDetail key="map" item={Data} />}
-    </>
+    </div>
   );
 }
 

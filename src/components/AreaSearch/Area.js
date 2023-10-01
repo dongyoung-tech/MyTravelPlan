@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import Footer from '../Main/Footer'
 const Area = () =>{
     return(
-        <div>
+        <div className="Area_main_con">
             <Routes>
                 <Route path="/" element={<AreaSelect/>} />
                 <Route path="/AreaDetail" element={<AreaDetail/>}/>
