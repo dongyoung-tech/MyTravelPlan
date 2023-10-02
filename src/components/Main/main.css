@@ -9,16 +9,17 @@
 }
 .main-photo{
     width: 100%;
-    height: 350px;
-    background-image: url('../../image/seoul.jpg');
+    height: 400px;
+    background-image: url('../../image/baegyangsa-6366314_1920.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    margin: 60px auto;
+    margin: 0 auto 60px;
     flex-direction: column;
+    padding-top:30px;
 }
 .banner{
     width: 100%;
