@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Filter = (props) =>{
     window.addEventListener('scroll',()=>{
-        if(window.scrollY < 1){
+        if(window.scrollY<1){
           document.querySelector('.Nav-Bar').classList.remove('scroll');
             
         }
