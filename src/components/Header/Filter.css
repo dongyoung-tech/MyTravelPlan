@@ -31,21 +31,32 @@
   float: left;
 }
 .Nav-inner ul li {
-  padding: 0 20px;
+  padding: 0 5px;
   float: left;
   height: 100%;
   line-height: 50px;
   text-align: center;
-  border-radius: 30px;
   font-weight: 500;
+  width: 120px;
+  margin: 0 5px;
 }
-.Nav-inner li:hover {
+ .Nav-Bar.scroll  li:hover {
   color: #598bf1;
+}
+.Nav-inner li:hover{
+  border-bottom: 2px solid white;
 }
 .logo {
   width: 170px;
   height: 50px;
   float: left;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-family: "Bamin";
+}
+.Nav-Bar.scroll .logo{
+  color: #598bf1;
 }
 .search-icon {
   display: block;
@@ -168,6 +179,10 @@
 @media(max-width:1000px){
     .search-field{
         display: none;
+    }
+    .logo{
+      color: #598bf1;
+      font-size: 1.2rem;
     }
 }
 @media (max-width: 700px) {

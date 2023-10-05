@@ -19,7 +19,7 @@ const FilterList = () =>{
     return(
         <div className="Nav-Bar">
             <div className="Nav-inner">
-            <a href='/'><img className="logo" src='http://youngtour.dothome.co.kr/images/letter-logo.png' alt='logo'></img></a>
+            <a href='/'><h2 className="logo">마이트레블플랜</h2></a>
                 <ul>
                    {topic.map((el,idx)=>{return <Filter key={idx} item={el}/>})}
                 </ul>

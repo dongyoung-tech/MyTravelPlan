@@ -4,6 +4,11 @@
     src: url("../../asset/BmxsYIvpUqQIXk-9r2f09a43bSY.ttf") format("truetype");
     font-weight: 500;
   }
+  @font-face { /* 애플산돌고딕 폰트 적용 */
+    font-family: "Bamin";
+    src: url("../../asset/BMDOHYEON_ttf.ttf") format("truetype");
+    font-weight: bold;
+  }
 .Container{
     margin-top: 100px;
 }
@@ -39,14 +44,20 @@
 }
 .footer{
     width: 100%;
-    background: #303740;
+  background-color: #f2f2f2;
     display: flex;
     align-items: center;
-    color: white;
-    height: 200px;
+    color: gray;
+    height: 150px;
     justify-content: center;
     margin-top: 70px;
     padding: 20px;
+    flex-wrap: wrap;
+}
+.footer-logo{
+    color: #598bf1;
+    padding: 10px;
+    font-size: 1.3rem;
 }
 .keyword{
     width:600px;
