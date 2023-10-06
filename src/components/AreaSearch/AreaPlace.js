@@ -16,8 +16,7 @@ const AreaPlace = (props) => {
   const pageUrl = `/Area?Area=${Area}&Sigungu=${Sigungu}&Category=${Category}`;
   const [totalDataCount,setTotalDataCount] = useState(1);
   const numOfRows = 12;
-  const apiKey =
-    "yX8wx5nzKb42wtBThegyX7gb6G3xUCPCMfbzNYF1Gf0p0nSUn9ZeynPzokq9GNLvrFLmqQVbU9%2FQz9LckJpQLw%3D%3D";
+  const apiKey = "yX8wx5nzKb42wtBThegyX7gb6G3xUCPCMfbzNYF1Gf0p0nSUn9ZeynPzokq9GNLvrFLmqQVbU9%2FQz9LckJpQLw%3D%3D";
 const apiEndpoint = `http://apis.data.go.kr/B551011/KorService1/areaBasedList1?serviceKey=${apiKey}&numOfRows=200&MobileOS=ETC&MobileApp=AppTest&_type=json&&arrange=Q
 &sigunguCode=${Sigungu}
 &contentTypeId=${Category}
