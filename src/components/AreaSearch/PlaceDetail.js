@@ -13,13 +13,23 @@ const PlaceDetail = (props) =>{
     const overviewHTML = { __html: data.overview };
     let imgurl = data.firstimage;
     const user = JSON.parse(sessionStorage.getItem("userData")); 
+    const dateStr = data.modifiedtime;
+
+    const year = dateStr.slice(0, 4);
+    const month = dateStr.slice(4, 6);
+    const day = dateStr.slice(6, 8);
+    const formattedDate = `수정일 ${year}-${month}-${day}`;
+
     return(
      <>
          <div className='Area-photo'><p>여행지 상세정보</p></div>
         <div className ="detail-con">
             <h2 className="d_title">{data.title}</h2>
             <h3 className="d_address">{data.addr1}</h3>
-            {user && data && <CartButton item={data}/>}
+            <div className="icon_con"> 
+                {user && data && <CartButton item={data}/>}
+                <span>{formattedDate}</span>
+            </div>
            {imgurl &&  <img className ="firstImage" src={data.firstimage}/>}
            {!imgurl && <div className="no-image"/>}
             <DetailImage item={data}/> 

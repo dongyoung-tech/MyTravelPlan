@@ -7,7 +7,7 @@ a{color: black;text-decoration: none;}
 .firstImage,.no-image{
     width: 890px;
     object-fit: cover;
-    margin: 20px auto 0;
+    margin: 10px auto 0;
 }
 .no-image{
     background-image: url("../../image/no-image.png");
@@ -235,7 +235,25 @@ a{color: black;text-decoration: none;}
     border: none;
     font-size: 3rem;
 }
-
+.icon_con{
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.fa-solid.fa-heart{
+    color: red;
+}
+.icon_con span{
+    display: inline-block;
+}
+.cart-button{
+    appearance: none;
+    background:none;
+    font-size: 1.3rem;
+    border: none;
+    margin: 0 10px;
+}
 @media(max-width:1000px){
     .detail-con{
         width: 100%;
