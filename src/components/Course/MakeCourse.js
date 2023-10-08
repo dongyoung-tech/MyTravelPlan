@@ -10,7 +10,7 @@ const MakeCourse = () =>{
     return(
         <>
         <div className="Map-container" id="Make">
-        <div className="course-topic"><h2>여행코스 만들기</h2></div>
+        <div className="course-topic_m"><h2>여행코스 만들기</h2></div>
                 <div className="Map-view">
                    <MakeMap/>
                </div>

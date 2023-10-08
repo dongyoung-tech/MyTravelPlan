@@ -1,4 +1,10 @@
 *{box-sizing: border-box;}
+input[type="date"]::-webkit-datetime-edit-text,
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-year-field {
+  color: #888;
+}
 .list{height:50px; text-align: center; border-bottom:1px solid #d2d2d2;padding:10px 0;}
 .list:first-child{
     background-color: #828282;
@@ -86,10 +92,13 @@
     color: #808080;
     margin:0 auto 10px
 }
-.course-topic{
+.course-topic , .course-topic_m{
     margin: 50px auto 20px;
     border-bottom: 1px solid #d2d2d2;
     padding: 10px;
+}
+.course-topic_m{
+    border-top: 1px solid #d2d2d2;
 }
 .select_list{
      overflow: scroll;
@@ -105,7 +114,7 @@
 }
 .Map-view{
     width: calc(100% - 300px);
-    height: calc(100% - 100px);
+    height: calc(100% - 70px);
     float: left;
 }
 
@@ -125,6 +134,7 @@
 .course_search_form{
     width: 250px;
     float: left;
+    padding: 0 10px;
     text-align: left;
 }
 .course_search_form input{
@@ -157,6 +167,14 @@
     padding: 5px;
     outline: none;
     appearance: none;
+}
+.select_list::-webkit-scrollbar {
+    background-color: white;
+    width:7px;
+    height: 7px;
+}
+.select_list::-webkit-scrollbar-thumb{
+    background-color: #5c77d1; border-radius: 3px;
 }
 .course-date{
     padding-right: 20px;

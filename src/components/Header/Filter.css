@@ -164,6 +164,7 @@
 .side-menu {
   display: none;
   z-index: 2;
+  color: black;
 }
 .side-overlay {
   background-color: black;

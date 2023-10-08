@@ -1,8 +1,10 @@
 .Select-Item{
-    width:100%;
+    width:calc(100% - 20px);
     height: 250px;
     text-align: center;
     font-weight: 100;
+    margin: 10px;
+    box-shadow: 0 0 7px 2px #d2d2d2;
 }
 .Select-Item img{
     width:100%;

@@ -19,10 +19,13 @@ const PlaceDetail = (props) =>{
     const month = dateStr.slice(4, 6);
     const day = dateStr.slice(6, 8);
     const formattedDate = `수정일 ${year}-${month}-${day}`;
-
     return(
      <>
-         <div className='Area-photo'><p>여행지 상세정보</p></div>
+         <div className='Area-photo'>
+            <p>
+                여행지 상세정보
+            </p>
+         </div>
         <div className ="detail-con">
             <h2 className="d_title">{data.title}</h2>
             <h3 className="d_address">{data.addr1}</h3>

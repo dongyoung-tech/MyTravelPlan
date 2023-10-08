@@ -46,7 +46,7 @@ const PlaceRippleList = (props) =>{
             <span className="p_list_regist">{props.item.regist}</span>
             <span className="p_list_rate">{setRate()}</span>
             <p className="p_list_content">{props.item.content}</p>
-            {Del && <span className="p_delete" onClick={deleteHandler}>삭제하기</span>}
+            {Del && <button className="p_delete" onClick={deleteHandler}>x</button>}
         </div>
     )
     
