@@ -51,12 +51,16 @@ const CourseInput = () => {
         }
         
     }
-
+    const getDate = () =>{
+        let today = new Date();   
+        return  today.toISOString().substring(0, 10);
+    }
+    
     return (
         <div className="c_save_form">
             <input className='coursename' type='text' name='coursename' placeholder="코스 이름을 적어주세요"></input>
-            <input className="course-start-date" type='date' placeholder="시작 일"></input>
-            <input className="course-last-date" type='date'></input>
+            <input className="course-start-date"  type='date' placeholder="시작 일" value={getDate()}></input>
+            <input className="course-last-date" type='date' placeholder="마지막 일" value={getDate()}></input>
             <textarea  className ='course-intro' placeholder="여행코스 에 대한 간략한 설명을 적어주세요"></textarea>
             <button onClick={InputHandler}>저장</button>
         </div>
