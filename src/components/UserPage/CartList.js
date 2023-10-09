@@ -27,6 +27,26 @@ const CartList = (props) => {
     }
   };
 
+  const updateData = async (title) =>{
+    const updatedItems = Data.filter(item => item.title !== title);
+    const url = "http://youngtour.dothome.co.kr/cart/cart_list_update.php";
+    try {
+      const response = await axios.post(url, {
+        userid: props.item,
+        info: JSON.stringify(updatedItems),
+      });
+
+      if (response.data === "저장하였습니다!" || response.data === "수정 하였습니다!") {
+        alert("수정하였습니다.");
+      } else {
+        alert("수정 실패하였습니다.");
+      }
+    } catch (error) {
+      console.error("Failed:", error);
+    }
+    setData(updatedItems);
+  }
+
   if(Data.length==0){
     return <b>찜한 여행지가 없습니다.</b>
   }
@@ -34,7 +54,7 @@ const CartList = (props) => {
     return (
       <div className="cart-list">
           {!isLoad && Data.map((item,idx)=>{
-                return <CartItem item={item} key={idx}/>
+                return <CartItem item={item} key={idx} updateData = {updateData}/>
             })}
       </div>
     );

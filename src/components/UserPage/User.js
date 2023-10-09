@@ -44,7 +44,7 @@ const User = () => {
   if(isLoad) return;
   return (
     <>
-    <div className="user-photo"><h2>회원정보</h2></div>
+    <div className="Area-photo"><p>회원정보</p></div>
     <div className='user-info'>
       <div className="user_p_info"> 
            {userData && userData.file_copied && <img className="profile-image"

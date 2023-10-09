@@ -46,27 +46,36 @@ const AreaSelect = () => {
     <>
     <div className='Area-photo'><p>지역별 검색</p></div>
       <div className='Area-Container'>
-        <h3 className='result-text'>검색결과</h3>
+        <h3 className='result-text'>관광지 목록</h3>
         <div className='select-box'>
+          <div className='select-sub-con'>
+          <h5>지역</h5>
           <select onChange={(e) => handleCatChange(e.target.value)}>
             {areacode.map((item, index) => (
               <option value={item} key={item}>
                 {areaText[index]}
               </option> ))}
           </select>
-          <select onChange={(e) => handleCatChange2(e.target.value)}>
-            {optionData.map((option) => (
-              <option value={option.code} key={option.rum}>
-                {option.name}
-              </option>
-            ))}
-          </select>
-          <select onChange={(e)=>handleCatChange3(e.target.value)}>
-            {contentType.map(item=>{
-              return <option value={item[1]}>{item[0]}</option>
-            })}
-          </select>
-          <button onClick={placeListHandler}>검색하기</button>
+          </div>
+          <div className='select-sub-con'>
+            <h5>시군구</h5>
+            <select onChange={(e) => handleCatChange2(e.target.value)}>
+              {optionData.map((option) => (
+                <option value={option.code} key={option.rum}>
+                  {option.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className='select-sub-con'>
+          <h5>관광지타입</h5>
+            <select onChange={(e)=>handleCatChange3(e.target.value)}>
+              {contentType.map(item=>{
+                return <option value={item[1]}>{item[0]}</option>
+              })}
+            </select>
+          </div>
+          <button onClick={placeListHandler}><i class="fa-solid fa-magnifying-glass"></i> 검색</button>
         </div>
         <div>
           <AreaPlace item={selected} key={"areaplace"} />

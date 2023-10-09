@@ -43,10 +43,11 @@
     resize:none;
 }
 .r_form button{
-    width: 10%;
+    width: 100px;
     margin-top: 10px;
     height: 40px;
     float: right;
+    margin-right: 0;
 }
 .repl-list{
     padding: 20px 0;
