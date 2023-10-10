@@ -8,6 +8,7 @@ const CartList = (props) => {
   useEffect(() => {
     getCart(props.item);
   }, [props]);
+  const user = JSON.parse(sessionStorage.getItem("userData"));
 
   const getCart = async (userid) => {
     try {
@@ -54,7 +55,7 @@ const CartList = (props) => {
     return (
       <div className="cart-list">
           {!isLoad && Data.map((item,idx)=>{
-                return <CartItem item={item} key={idx} updateData = {updateData}/>
+                return <CartItem item={item} key={idx} updateData = {updateData} user={user}/>
             })}
       </div>
     );

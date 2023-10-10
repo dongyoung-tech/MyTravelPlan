@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import axios from 'axios';
 
 const JoinForm = () => {
+  const [memberValid, setValid] = useState(true);
   const [formData, setFormData] = useState({
     userid: "",
     pass: "",
     username: "",
-    email: "",
     intro: "",
     upfile: null, // 파일 업로드를 위한 초기값
   });
@@ -26,37 +26,77 @@ const JoinForm = () => {
         [name]: value,
       });
     }
+    LoginCheck();
   };
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
+    if(!memberValid){
+      alert('아이디 형식을 충족 시켜주세요');
+      return;
+    }
     try {
-      const { userid, pass, username, email, intro, upfile } = formData;
-
-      // FormData를 생성하고 파일 및 필드 정보를 추가
-      const formDataToSend = new FormData();
-      formDataToSend.append('userid', userid);
-      formDataToSend.append('pass', pass);
-      formDataToSend.append('username', username);
-      formDataToSend.append('email', email);
-      formDataToSend.append('intro', intro);
-      formDataToSend.append('upfile', upfile);
-
+      const formDataToSend = {
+        userid:formData.userid,
+        pass:formData.pass,
+        username:formData.username,
+        intro:formData.intro,
+        upfile:formData.upfile,
+      }
+      console.log('전송할데이터',formDataToSend.userid);
       // 서버로 회원가입 요청을 보냅니다.
       const response = await axios.post('http://youngtour.dothome.co.kr/member/member-join.php', formDataToSend, {
         headers: {
-          'Content-Type': 'multipart/form-data', // Content-Type 설정
+          'Content-Type': 'application/json'
         },
       });
-      
+
+      if(response.data.trim() == "success!") window.location.href='/';
+      else{
+        alert(response.data);
+        return;
+      }
     } catch (error) {
       console.error('Join Failed:', error);
     }
   };
+  const LoginCheck = () =>{
+    const regex = /^(?=.*[a-zA-Z])(?=.*[\W_])[\da-zA-Z\W_]*$/;
+    const idPattern =  /^(?=.*[a-zA-Z])[a-zA-Z\d]+$/;
+    const useridText = document.forms[0].userid.value;
+    const userpassText = document.forms[0].pass.value;
+    if(idPattern.test(useridText))  {
+      if(useridText.length >0){
+        document.querySelector(".IdText").innerHTML = "";
+        setValid(true);
+      }
+    }
+    else {
+        if(useridText.length >0){
+          document.querySelector(".IdText").innerHTML =
+          "아이디는 영어 와 숫자만 사용 하셔야 합니다.";
+          setValid(false);
+        }
+        else document.querySelector(".IdText").innerHTML = "";
+        
+    }
+    // 입력한 패스워드가 정규식과 일치하는지 확인
+    if (regex.test(userpassText)) {
+        document.querySelector(".passText").innerHTML = "";
+        setValid(true);
+    } else {
+      if(userpassText.length >0){
+        document.querySelector(".passText").innerHTML =
+          "패스워드는 영어와 특수문자와 를 포함해야합니다.";
+          setValid(false);
+      }
+      else document.querySelector(".passText").innerHTML = "";;
+    }
 
+  }
   return (
     <div>
+      <div className="Area-photo"><p>회원가입</p></div>
       <img  className='j-logo'src="http://youngtour.dothome.co.kr/images/letter-logo.png"></img>
       <form className="join_frm" onSubmit={handleFormSubmit}>
         <div className="join-sub">
@@ -68,6 +108,7 @@ const JoinForm = () => {
             value={formData.userid}
             onChange={handleInputChange}
           />
+          <span className="IdText"></span>
           <input
             name="pass"
             className="pass"
@@ -76,20 +117,13 @@ const JoinForm = () => {
             value={formData.pass}
             onChange={handleInputChange}
           />
+            <span className="passText"></span>
           <input
             name="username"
             className="username"
             type="text"
             placeholder="닉네임"
             value={formData.username}
-            onChange={handleInputChange}
-          />
-          <input
-            name="email"
-            className="email"
-            type="email"
-            placeholder="이메일"
-            value={formData.email}
             onChange={handleInputChange}
           />
           <textarea

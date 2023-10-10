@@ -8,7 +8,7 @@ const CartItem = (props) =>{
             <div className="cart-item-info">
                 <b className="cart-item-title">{props.item.title}</b>
                 <b className="cart-item-addr">{props.item.address}</b>
-                <button onClick={() => props.updateData(props.item.title)}> 삭제</button>
+                { props.user && <button onClick={() => props.updateData(props.item.title)}><i class="fa-regular fa-trash-can"></i></button>}
             </div>
         </div>
     )

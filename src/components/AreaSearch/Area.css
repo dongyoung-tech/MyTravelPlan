@@ -24,7 +24,7 @@
   border-right: 1px solid #d2d2d2;
 }
 .select-sub-con h5{
-    margin-left: 4px;
+
     font-size: 0.9rem;
 }
 .select-box select{
@@ -34,6 +34,9 @@
     color: gray;
     font-size: 1rem;
     background: white;
+    background-image: url('../../image/select.png');
+    background-position-x: right;
+    background-position-y: center;
 }
 .select-box button{
     border: none;

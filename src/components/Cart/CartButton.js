@@ -35,7 +35,10 @@ const CartButton = (props) => {
   const cartInsert = async () => {
     const info = [...cartData, placeObject];
     let url = "";
-
+    if(isItemInCart) {
+      alert('이미 찜한 여행지 입니다.');
+      return
+    }
     if (cartData.length === 0)
       url = "http://youngtour.dothome.co.kr/cart/cart_list_insert.php";
     else url = "http://youngtour.dothome.co.kr/cart/cart_list_update.php";

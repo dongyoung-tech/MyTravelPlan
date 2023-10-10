@@ -11,7 +11,8 @@ const LoginInfo = (props) =>{
     if(user){
         return(
             <div className="login_info_con">
-                <img src={`http://youngtour.dothome.co.kr/upload/${user.file_copied}`} ></img>
+                {user.file_copied  && <img src={`http://youngtour.dothome.co.kr/upload/${user.file_copied}`} ></img>}
+                {!user.file_copied && <div className="non_profile_image"></div>}
                 <p>{user.name} 님</p>
                 <p>{user.id}</p>
                 <LogOutButton/>
