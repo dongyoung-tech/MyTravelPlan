@@ -65,6 +65,10 @@ const JoinForm = () => {
     const idPattern =  /^(?=.*[a-zA-Z])[a-zA-Z\d]+$/;
     const useridText = document.forms[0].userid.value;
     const userpassText = document.forms[0].pass.value;
+    const usernameText = document.forms[0].username.value;
+    if(useridText == "") {alert('아이디를 입력해주세요'); return;}
+    if(userpassText == "") {alert('비밀번호 를 입력해주세요'); return;}
+    if(usernameText == "") {alert('닉네임을 입력해주세요'); return;}
     if(idPattern.test(useridText))  {
       if(useridText.length >0){
         document.querySelector(".IdText").innerHTML = "";
@@ -104,7 +108,7 @@ const JoinForm = () => {
             name="userid"
             className="userid"
             type="text"
-            placeholder="이름"
+            placeholder="아이디"
             value={formData.userid}
             onChange={handleInputChange}
           />

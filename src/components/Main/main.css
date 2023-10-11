@@ -115,4 +115,11 @@
 }
 .login-menu button{
     margin-top: 10px;
+    background-color: #598bf1;
+    color: white;
+    border: none;
+    padding: 10px;
+    display: block;
+    width: 80px;
+    margin: 10px auto;
 }
