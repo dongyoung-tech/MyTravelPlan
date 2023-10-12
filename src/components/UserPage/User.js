@@ -29,6 +29,7 @@ const User = () => {
           setData(response.data[0]);
           setLoad(false);
         }
+        else{alert('존재하지 않는 페이지 입니다.'); window.history.go(-1);}
       } catch (error) {
         console.error("Login Failed:", error);
       }

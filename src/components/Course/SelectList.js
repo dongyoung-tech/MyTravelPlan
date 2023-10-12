@@ -3,7 +3,6 @@ import SelectItem from "./SelectItem";
 
 const SelectList = (props) => {
   const [Data, setData] = useState([]);
-  const [isLoading, setLoad] = useState(false);
   const [pageNo, setPageNo] = useState(1); // 현재 페이지 번호;
   const [totalDataCount,setTotalDataCount] = useState(1);
   const numOfRows = 12;
@@ -17,8 +16,6 @@ const SelectList = (props) => {
         const elem = data.response.body.items.item;
         setData(elem);
         setTotalDataCount(elem.length);
-        if (elem == undefined) setLoad(true);
-        else setLoad(false);
       })
       .catch(error => {
         console.log(error);
@@ -90,12 +87,12 @@ const SelectList = (props) => {
   return (
    <>
      <div className="select_list">
-      {!isLoading && getCurrentPageData().map((item, index) => {
+      {Data && getCurrentPageData().map((item, index) => {
         return <SelectItem key={index} item={item} />
       })}
-      {isLoading && <div>검색 결과가 없습니다. 다른 키워드를 입력해주세요.</div>}
+      {!Data && <div style={{padding:'10px'}}>검색 결과가 없습니다. 다른 키워드를 입력해주세요.</div>}
     </div>
-          <div className="pagination">{renderPageButtons()}</div>
+    {Data && <div className="pagination">{renderPageButtons()}</div>}
    </>
   );
 }
