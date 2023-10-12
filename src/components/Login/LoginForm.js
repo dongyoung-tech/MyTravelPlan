@@ -27,9 +27,13 @@ const LoginForm =()=>{
         username,
         password,
       });
-      sessionStorage.setItem('isLoggedIn', 'true');
-      sessionStorage.setItem('userData',JSON.stringify(response.data[0]));
-      if(response.data != "Failed") window.location.href='/';
+      if(typeof response.data != 'string'){
+        sessionStorage.setItem('isLoggedIn', 'true');
+        sessionStorage.setItem('userData',JSON.stringify(response.data[0]));
+        window.location.href='/';
+      } 
+      else alert(response.data);
+
     } catch (error) {
       console.error('Login Failed:', error);
     }
@@ -38,6 +42,7 @@ const LoginForm =()=>{
   const imageUrl = "http://youngtour.dothome.co.kr/images/letter-logo.png";
   return (
     <div>
+      <div className='Area-photo'><p>로그인</p></div>
       <form className='login-con'>
       <img src={imageUrl}></img>
         <div className='login-box'>
@@ -65,8 +70,8 @@ const LoginForm =()=>{
           </div>
         </div>
         <button onClick={handleLogin}>Login</button>
+        <button onClick={NewMem}>회원가입</button>
       </form>
-      <span onClick={NewMem}>회원가입</span>
     </div>
   );
 }

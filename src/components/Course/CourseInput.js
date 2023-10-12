@@ -5,7 +5,10 @@ import axios from 'axios';
 const CourseInput = () => {
     const user = JSON.parse(sessionStorage.getItem('userData'));
     const courseData = useSelector((state) => state).items;
-
+    if(!user){
+        alert('로그인 후 이용해주세요.');
+        window.history.go(-1);
+    }
     const InputHandler = async (event) => {
         event.preventDefault();
         const username = user.name;
@@ -59,8 +62,8 @@ const CourseInput = () => {
     return (
         <div className="c_save_form">
             <input className='coursename' type='text' name='coursename' placeholder="코스 이름을 적어주세요"></input>
-            <input className="course-start-date"  type='date' placeholder="시작 일" value={getDate()}></input>
-            <input className="course-last-date" type='date' placeholder="마지막 일" value={getDate()}></input>
+            <input className="course-start-date"  type='date' placeholder="시작 일" defaultValue={getDate()} ></input>
+            <input className="course-last-date" type='date' placeholder="마지막 일" defaultValue={getDate()}></input>
             <textarea  className ='course-intro' placeholder="여행코스 에 대한 간략한 설명을 적어주세요"></textarea>
             <button onClick={InputHandler}>저장</button>
         </div>

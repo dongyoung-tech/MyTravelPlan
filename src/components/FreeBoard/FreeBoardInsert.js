@@ -2,6 +2,11 @@ import React ,{useState} from "react";
 import axios from 'axios';
 
 const FreeBoardInsert = () =>{
+  const user = JSON.parse(sessionStorage.getItem('userData'));
+  if(!user){
+    alert('로그인 후 이용 해주세요.');
+    window.location.href='./';
+  }
     const [Maintopic,setTopic] = useState('');
     const [MainTxt,setTxt] = useState('');
 
@@ -11,7 +16,7 @@ const FreeBoardInsert = () =>{
     const TextHandler = (event) =>{
         setTxt(event.target.value);
     }
-    const user = JSON.parse(sessionStorage.getItem('userData'));
+
     const username = user.name;
     const userid = user.id;
     const content = MainTxt;
@@ -33,7 +38,7 @@ const FreeBoardInsert = () =>{
       };
     
     return(
-        <div style={{marginTop:"50px"}}>
+        <div>
             <h2>글쓰기</h2>
              <input className ='f_title_input'placeholder="제목" onChange={TopicHandler}></input>
             <textarea className="f_content_area" placeholder="글내용" onChange={TextHandler}></textarea>

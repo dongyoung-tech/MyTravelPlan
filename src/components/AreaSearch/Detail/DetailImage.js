@@ -1,5 +1,5 @@
 import React ,{useState,useEffect}from "react";
-import ImageItem from "./ImageItem";
+import ImageItem from "../ImageItem";
 import DetailImageView from "./DetailImageView";  
 
 const DetailImage =(props)=>{  

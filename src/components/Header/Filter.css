@@ -46,7 +46,7 @@
 .Nav-inner li:hover{
   border-bottom: 2px solid white;
 }
-.logo {
+.logo a {
   width: 170px;
   height: 50px;
   float: left;
@@ -55,7 +55,7 @@
   color: white;
   font-family: "Bamin";
 }
-.Nav-Bar.scroll .logo{
+.Nav-Bar.scroll .logo a{
   color: #598bf1;
 }
 .search-icon {
@@ -188,7 +188,7 @@
     .search-field{
         display: none;
     }
-    .logo{
+    .logo a{
       color: #598bf1;
       font-size: 1.2rem;
     }
@@ -215,7 +215,7 @@
   .side-button {
     display: block;
   }
-  .logo {
+  .logo a {
     margin: 5px auto;
     float: none;
     width: 130px;

@@ -24,8 +24,6 @@ const CartButton = (props) => {
       if (response.data !== "no data") {
         const parsedData = response.data;
         setCartData(JSON.parse(parsedData[0].info));
-      } else {
-        console.log("장바구니 아직 안만들어짐");
       }
     } catch (error) {
       console.error("Failed:", error);

@@ -1,11 +1,11 @@
 import React from "react";
 import DetailImage from "./DetailImage";
-import AreaMap from "./AreaMap";
-import "./Detail.css";
-import PlaceRipple from "../Ripple/PlaceRipple";
+import AreaMap from "../AreaMap";
+import "../Detail.css";
+import PlaceRipple from "../../Ripple/PlaceRipple";
 import AroundPlace from "./AroundPlace/AroundPlace";
 import BlogSearch from "./BlogSearch";
-import CartButton from "../Cart/CartButton";
+import CartButton from "../../Cart/CartButton";
 import DetailIntro from "./DetailIntro";
 
 const PlaceDetail = (props) =>{

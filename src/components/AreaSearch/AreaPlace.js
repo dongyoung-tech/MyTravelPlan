@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Card from "../UI/Card.js";
+import Card from "../UI/Card";
 import "./Area.css";
 import { Link, useLocation } from "react-router-dom";
 import Loading from "../UI/Loading.js";
 
-const AreaPlace = (props) => {
+const AreaPlace = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const [Data, setData] = useState([]);
@@ -28,9 +28,9 @@ useEffect(() => {
     .then((data) => {
       const elem = data.response.body.items.item;
       setData(elem);
-      document.querySelector('.loading-con').classList.add('hide');
       if (elem == undefined) setLoad(true);
       else setLoad(false);
+      document.querySelector('.loading-con').classList.add('hide');
       setTotalDataCount(elem.length);
       if(pageNo < 0 || pageNo > elem.length ){
         setPageNo(1);
@@ -108,16 +108,19 @@ useEffect(() => {
     return buttons;
   };
   
-
+  const MakeCard = () =>{
+    const cardData = getCurrentPageData().map((item, index) => {
+      return <Card key={index} item={item} />;
+    })
+    return cardData;
+  }
   return (
     <>
       <div className="Card-Container">
         <Loading/>
-        {!isLoading && getCurrentPageData().map((item, index) => {
-          return <Card key={index} item={item} />;
-        })}
+        {!isLoading && MakeCard()}
         {isLoading && (
-          <div>검색결과 가 없습니다. 다른 지역을 선택 해주세요.</div>
+          <div style={{margin:'30px 0',textAlign:'center',width:'100%'}}>검색결과 가 없습니다. 다른 지역을 선택 해주세요.</div>
         )}
       </div>
       {!isLoading && <div className="pagination">{renderPageButtons()}</div>}

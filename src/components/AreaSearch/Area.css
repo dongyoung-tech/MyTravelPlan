@@ -100,10 +100,12 @@
     .Area-photo{
         height: 200px;
     }
-    .pagination{
+    .Area-Container .pagination{
         margin-top: 30px;
     }
-   
+   .select-box{
+    margin: 0;
+   }
     .Area-photo{
         margin-top: 50px;
     }

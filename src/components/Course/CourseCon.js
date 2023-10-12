@@ -36,7 +36,6 @@ const CourseCon = () =>{
        const getCurrentPageData = () => {
         const startIndex = (pageNo - 1) * numOfRows;
         const endIndex = startIndex + numOfRows;
-        console.log(Data,startIndex,endIndex);
         return Data.slice(startIndex, endIndex);
       };
       const changePage = (newPageNo) => {
@@ -109,7 +108,7 @@ const CourseCon = () =>{
             })}
             </div>
             {<div className="pagination">{renderPageButtons()}</div>}
-            {user&& <button onClick={ClickHandler}>코스 만들기</button>}
+            {user && <button onClick={ClickHandler}>코스 만들기</button>}
           </div>
     )
 }

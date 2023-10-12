@@ -1,5 +1,5 @@
 .login-con{
-    margin: 100px auto;
+    margin: 50px auto 100px;
     width: 700px;
     text-align: center;
 }
@@ -32,7 +32,9 @@
     appearance: none;
     border: none;
     color: white;
-    margin-top: 10px;
+    margin: 20px auto;
+    display: block;
+    text-align: center;
     border-radius: 5px;
 }
 

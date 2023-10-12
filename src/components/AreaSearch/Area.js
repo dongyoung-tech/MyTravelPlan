@@ -1,6 +1,6 @@
 import React  from "react";
 import AreaSelect from './AreaSelect.js';
-import AreaDetail from "./AreaDetail.js";
+import AreaDetail from "./Detail/AreaDetail";
 import { Routes, Route } from 'react-router-dom';
 import Footer from '../Main/Footer'
 const Area = () =>{

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import PlaceDetail from "./PlaceDetail";
-import Loading from "../UI/Loading";
+import Loading from "../../UI/Loading";
 
 const AreaDetail = () => {
   const [isLoading, setIsLoading] = useState(true);

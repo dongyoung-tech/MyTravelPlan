@@ -22,7 +22,7 @@ const DetailImageView = props =>{
             <button className="image-left-btn" onClick={ImageLeftHandler}><i class="fa-solid fa-arrow-left"></i></button>
             <img className="detail-image-view"></img>
             <button className="image-right-btn" onClick={ImageRightHandler}><i class="fa-solid fa-arrow-right"></i></button>
-            <button className="close-btn" onClick={ClickHandler}><i class="fa-solid fa-xmark"></i></button>
+            <div className="close-btn" onClick={ClickHandler}></div>
         </div>
     )
 }

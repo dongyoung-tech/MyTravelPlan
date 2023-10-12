@@ -34,7 +34,6 @@ const CourseView = () => {
         if (Array.isArray(data) && data.length > 0) {
           setData(data);
         } else {
-          console.log(data);
           alert('존재하지 않는 페이지입니다.');
           window.history.go(-1);
         }

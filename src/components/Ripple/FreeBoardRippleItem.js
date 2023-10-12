@@ -37,7 +37,7 @@ const FreeBardRippleItem = (props) =>{
             <a href={`/User?user=${props.item.id}`}><span className="r_item_title">{props.item.name}</span></a>
             <span className="r_item_regist">{props.item.regist}</span>
             <span className="r_item_content">{props.item.content}</span>
-            {Del && <span className="r_delete" onClick={deleteHandler}>삭제하기</span>}
+            {Del && <div className="r_delete" onClick={deleteHandler}>x</div>}
         </div>
     )
 }

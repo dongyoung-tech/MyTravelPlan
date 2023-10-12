@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from "react";
 import { useLocation } from "react-router-dom";
-import Card from "../../UI/Card";
+import Card from "../../../UI/Card";
 const AroundPlace = (props) =>{
     const [isLoading, setIsLoading] = useState(true);
     const [Data, setData] = useState([]);

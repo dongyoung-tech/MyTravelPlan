@@ -57,6 +57,7 @@ const UserModify = () => {
 
   return (
     <div>
+      <div className="Area-photo"><p>회원정보수정</p></div>
       <img className="j-logo" src="http://youngtour.dothome.co.kr/images/letter-logo.png"></img>
       <form className="join_frm" onSubmit={handleFormSubmit}>
         <div className="join-sub">
@@ -74,14 +75,6 @@ const UserModify = () => {
             type="text"
             placeholder="닉네임"
             value={formData.name}
-            onChange={handleInputChange}
-          />
-          <input
-            name="email"
-            className="email"
-            type="email"
-            placeholder="이메일"
-            value={formData.email}
             onChange={handleInputChange}
           />
           <textarea
