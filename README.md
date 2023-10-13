@@ -1,4 +1,5 @@
 # Getting Started with Create React App
+이동영의 국내 여행코스 제작 웹사이트 입니다.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
