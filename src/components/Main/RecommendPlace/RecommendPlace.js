@@ -1,10 +1,7 @@
 import React from "react";
 import Places from "./Places";
 import '../main.css';
-import { useSelector } from "react-redux";
 import {useNavigate} from 'react-router-dom';
-import Footer from "../Footer";
-import SideButton from "../../Header/SideButton";
 const RecommendPlace = props =>{
   const navigate = useNavigate();
   const KeyWordHandler =()=>{
@@ -33,7 +30,6 @@ const RecommendPlace = props =>{
           <Places item="39" area={AreaCodeHandlier()}/>
           <div className="banner"><h2>MYTravelPlan<br></br>나만의 여행코스를 만들어 보세요!</h2></div>
           <Places item="32" area={AreaCodeHandlier()}/>
-          <Footer/>
         </div>
           
     );

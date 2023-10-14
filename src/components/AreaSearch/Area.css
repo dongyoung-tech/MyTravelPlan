@@ -76,7 +76,7 @@
     background-image: url('../../image/loading.png');
     background-size: cover;
 }
-.pagination{margin-top:10px;text-align: center;}
+.pagination{margin-top:30px;text-align: center;}
 .pagination a , .pagination button{
     display: inline-block;
     background-color: white;
@@ -85,12 +85,11 @@
     width: 30px;
     height: 30px;
     line-height: 30px;
-    border-radius: 30px;
     margin: 5px;
 }
 .pagination a.active, .pagination button.active{
-    background: #598bf1;
-    color: white;
+    box-shadow: 0 0 2px 0px #808080;
+    color: #598bf1;
 }
 
 @media(max-width:1000px){
@@ -101,7 +100,7 @@
         height: 200px;
     }
     .Area-Container .pagination{
-        margin-top: 30px;
+        margin-top: 40px;
     }
    .select-box{
     margin: 0;

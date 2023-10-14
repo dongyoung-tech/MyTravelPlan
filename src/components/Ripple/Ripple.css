@@ -76,9 +76,9 @@
 .c_form button{
     display: block;
     float: right;
-    width: 50px;
+    width: 70px;
     height: 30px;
-    background: #13294b;
+    background:#598bf1;
     border: none;
     color: white;
 }

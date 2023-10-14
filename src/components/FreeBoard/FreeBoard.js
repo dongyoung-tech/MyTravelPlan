@@ -18,7 +18,6 @@ const FreeBoard = () => {
                     <Route path = "/Modify" element ={<FreeBoardModify/>}/>
                 </Routes>
             </div>
-            <Footer/>
         </>
     )
 }

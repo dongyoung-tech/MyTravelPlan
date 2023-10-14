@@ -6,6 +6,7 @@ const JoinForm = () => {
   const [formData, setFormData] = useState({
     userid: "",
     pass: "",
+    passCheck:"",
     username: "",
     intro: "",
     upfile: null, // 파일 업로드를 위한 초기값
@@ -37,6 +38,7 @@ const JoinForm = () => {
     if(useridText == "") {alert('아이디를 입력해주세요'); return;}
     if(userpassText == "") {alert('비밀번호 를 입력해주세요'); return;}
     if(usernameText == "") {alert('닉네임을 입력해주세요'); return;}
+    if(userpassText != formData.passCheck) {alert('비밀번호 확인을 다시 해주세요!'); return}
     if(!memberValid){
       alert('아이디 형식을 충족 시켜주세요');
       return;
@@ -121,6 +123,13 @@ const JoinForm = () => {
             type="password"
             placeholder="비밀번호"
             value={formData.pass}
+            onChange={handleInputChange}
+          />
+          <input
+            name="passCheck"
+            className="passCheck"
+            type="password"
+            placeholder="비밀번호 확인"
             onChange={handleInputChange}
           />
             <span className="passText"></span>

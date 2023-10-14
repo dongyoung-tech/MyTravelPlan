@@ -9,6 +9,7 @@ import './components/Main/main.css';
 import KeyWord from "./components/Keyword/KeyWord";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import User from "./components/UserPage/User";
+import Footer from "./components/Main/Footer";
 const App = () => {
     return (
       <>
@@ -23,6 +24,7 @@ const App = () => {
           <Route key ="Login" path="/Login/*" element={<Login />} />
           <Route key ="User" path="/User/*" element={<User />} />
         </Routes>
+        <Footer/>
       </Router>
       </>
     );
