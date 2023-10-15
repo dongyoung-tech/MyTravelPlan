@@ -22,8 +22,10 @@ const RecommendPlace = props =>{
         <div>
           <div className="main-photo"><h2>MYTravelPlan<br></br>나만의 여행코스를 만들어 보세요!</h2>
             <div className="keyword">
-               <input placeholder="검색어를 입력하세요"></input>
-               <button onClick={KeyWordHandler}><i class="fa-solid fa-magnifying-glass"></i></button>
+               <form action="/Keyword">
+                <input name="keyword" placeholder="검색어를 입력하세요"></input>
+                <button onClick={KeyWordHandler}><i class="fa-solid fa-magnifying-glass"></i></button>
+               </form>
             </div>
           </div>
           <Places item="12" area={AreaCodeHandlier()}/>

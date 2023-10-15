@@ -28,7 +28,10 @@ const PlaceDetail = (props) =>{
          </div>
         <div className ="detail-con">
             <h2 className="d_title">{data.title}</h2>
-            <h3 className="d_address">{data.addr1}</h3>
+            <ul className="d_address">
+            {data.addr1 && <li><span>주소</span>{data.addr1}</li>}
+            {data.tel &&  <li><span>전화번호</span>{data.tel}</li>}
+            </ul>
             <div className="icon_con"> 
                 {user && data && <CartButton item={data}/>}
                 <span>{formattedDate}</span>

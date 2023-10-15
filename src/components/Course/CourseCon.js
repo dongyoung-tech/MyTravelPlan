@@ -58,8 +58,9 @@ const CourseCon = () =>{
             onClick={() => {
               changePage(pageNo - 1);
             }}
+            className='arrow'
           >
-            이전
+              <i class="fa-solid fa-angle-left"></i>
           </Link>
           );
         }
@@ -87,8 +88,9 @@ const CourseCon = () =>{
             onClick={() => {
               changePage(pageNo + 1);
             }}
+            className='arrow'
           >
-            다음
+              <i class="fa-solid fa-angle-right"></i>
           </Link>
           );
         }

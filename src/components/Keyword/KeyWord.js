@@ -9,7 +9,7 @@ const KeyWord = () =>{
     useEffect(() => {
         // URL 쿼리 파라미터 가져오기
         const searchParams = new URLSearchParams(location.search);
-        keyword = searchParams.get('keyword');
+        keyword = searchParams.get('keyword') || '서울';
         // name 변수에 파라미터 값 1이 저장됩니다.
         setKey(keyword);
         setLoad(false);

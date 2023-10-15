@@ -183,6 +183,73 @@
   z-index: 1;
   display: none;
 }
+.s_login_btn_con{
+  display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+}
+.side-menu{
+  width: 600px;
+  height: 100%;
+  position: fixed;
+  background-color: white;
+  top:0;
+  right: 0;
+  z-index: 2;
+}
+.login-menu{
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+}
+.login-menu img ,.login-menu .non_profile_image{
+  margin: 10px auto;
+  float: none;
+}
+.side-menu ul{
+  border-bottom: 1px solid #d2d2d2;
+  z-index: 2;
+}
+.side-menu ul li{
+  height: 50px;
+  line-height: 50px;
+  border-top:1px solid #d2d2d2 ;
+  padding-left:10px;
+}
+
+.login-menu button{
+  margin-top: 10px;
+  background-color: #598bf1;
+  color: white;
+  border: none;
+  padding: 10px;
+  display: block;
+  width: 80px;
+  margin: 5px;
+}
+
+.side-menu form{
+  background-color: #f2f2f2;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  margin-top: 30px;
+  padding: 10px;
+}
+.side-menu form input{
+  height: 100%;
+  background: none;
+  width: calc(100% - 40px);
+  outline: none;
+}
+.side-menu form button{
+  border: none;
+  width: 30px;
+  margin-left: 10px;
+  background: none;
+}
 @media(max-width:1000px){
     .search-field{
         display: none;

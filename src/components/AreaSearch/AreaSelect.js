@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Option from './Option.js';
 import AreaPlace from './AreaPlace';
 import { useNavigate } from 'react-router-dom'; 
-import { Link, useLocation } from "react-router-dom";
+import {useLocation } from "react-router-dom";
 
 let areacode = ['1','6','2','4','5','3','7','8','31','32','33','34','35','36','37','38','39'];
 let areaText = ['서울','부산','인천','대구','광주','대전','울산','세종','경기','강원','충북','충남','경북','경남','전북','전남','제주'];
@@ -29,7 +29,7 @@ const AreaSelect = () => {
       });
   }, [Cat]);
 
-
+  console.log('AreaSelect');
   const handleCatChange = (newCat) => {
     setCat(newCat);
   };
@@ -45,7 +45,6 @@ const AreaSelect = () => {
     setSelect([Cat, Cat2,Cat3]);
     navigate(`/Area?Area=${Cat}&Sigungu=${Cat2}&Category=${Cat3}&Page=1`);
   };
-
   return (
     <>
     <div className='Area-photo'><p>지역별 검색</p></div>

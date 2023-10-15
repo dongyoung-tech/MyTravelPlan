@@ -86,12 +86,22 @@
     height: 30px;
     line-height: 30px;
     margin: 5px;
+    border-radius: 30px;
 }
 .pagination a.active, .pagination button.active{
-    box-shadow: 0 0 2px 0px #808080;
-    color: #598bf1;
+   color: white;
+    background: #598bf1;
 }
 
+.pagination .arrow{
+    background-color: gray;
+    color: white;
+}
+.error-page{
+    padding: 10px;
+    text-align: center;
+    margin-top: 30px;
+}
 @media(max-width:1000px){
     .Area-Container{
         width: 95%;
