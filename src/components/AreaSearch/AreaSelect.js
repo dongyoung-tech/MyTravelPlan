@@ -3,6 +3,9 @@ import Option from './Option.js';
 import AreaPlace from './AreaPlace';
 import { useNavigate } from 'react-router-dom'; 
 import {useLocation } from "react-router-dom";
+import AreaSelection from "./AreaSelection";
+import SigunguSelection from "./SigunguSelection";
+import CategorySelection from "./CategorySelection";
 
 let areacode = ['1','6','2','4','5','3','7','8','31','32','33','34','35','36','37','38','39'];
 let areaText = ['서울','부산','인천','대구','광주','대전','울산','세종','경기','강원','충북','충남','경북','경남','전북','전남','제주'];
@@ -51,33 +54,9 @@ const AreaSelect = () => {
       <div className='Area-Container'>
         <h3 className='result-text'>관광지 목록</h3>
         <div className='select-box'>
-          <div className='select-sub-con'>
-          <h5>지역</h5>
-          <select onChange={(e) => handleCatChange(e.target.value)} value={Cat}>
-            {areacode.map((item, index) => (
-              <option value={item} key={item}>
-                {areaText[index]}
-              </option> ))}
-          </select>
-          </div>
-          <div className='select-sub-con'>
-            <h5>시군구</h5>
-            <select onChange={(e) => handleCatChange2(e.target.value)} value={Cat2}>
-              {optionData.map((option) => (
-                <option value={option.code} key={option.rum}>
-                  {option.name}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className='select-sub-con'>
-          <h5>관광지타입</h5>
-            <select onChange={(e)=>handleCatChange3(e.target.value)} value={Cat3}>
-              {contentType.map(item=>{
-                return <option value={item[1]}>{item[0]}</option>
-              })}
-            </select>
-          </div>
+          <AreaSelection handleCatChange ={handleCatChange} area={areacode} areaTxt={areaText} cat={Cat}/>
+          <SigunguSelection handleCatChange2={handleCatChange2} cat2={Cat2} optionData={optionData}/>
+          <CategorySelection handleCatChange3={handleCatChange3} cat3={Cat3} contentType={contentType}/>
           <button onClick={placeListHandler}><i class="fa-solid fa-magnifying-glass"></i> 검색</button>
         </div>
         <div>

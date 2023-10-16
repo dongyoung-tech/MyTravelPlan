@@ -10,8 +10,8 @@ const Places = props => {
 let blankIdx;
 const getData = async() =>{
   try {
-    // 서버로 로그인 요청을 보냅니다.
-    const response = await axios.post(apiEndpoint, {
+      // 서버로 로그인 요청을 보냅니다.
+      const response = await axios.post(apiEndpoint, {
       areaCode: props.area,
       category: props.item,
       topic:'main'
@@ -31,7 +31,7 @@ const getData = async() =>{
     }
 
   } catch (error) {
-    console.error('Login Failed:', error);
+    console.error('Search Failed:', error);
   }
 }
 useEffect(() => {

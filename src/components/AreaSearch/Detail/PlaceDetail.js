@@ -7,10 +7,12 @@ import AroundPlace from "./AroundPlace/AroundPlace";
 import BlogSearch from "./BlogSearch";
 import CartButton from "../../Cart/CartButton";
 import DetailIntro from "./DetailIntro";
+import Overview from "./Overview";
+import DetailTitle from "./DetailTitle"
 
 const PlaceDetail = (props) =>{
     const data =props.item[0];
-    const overviewHTML = { __html: data.overview };
+    let overviewHTML = { __html: data.overview };
     let imgurl = data.firstimage;
     const user = JSON.parse(sessionStorage.getItem("userData")); 
     const dateStr = data.modifiedtime;
@@ -27,11 +29,7 @@ const PlaceDetail = (props) =>{
             </p>
          </div>
         <div className ="detail-con">
-            <h2 className="d_title">{data.title}</h2>
-            <ul className="d_address">
-            {data.addr1 && <li><span>주소</span>{data.addr1}</li>}
-            {data.tel &&  <li><span>전화번호</span>{data.tel}</li>}
-            </ul>
+            <DetailTitle title={data.title} addr1 = {data.addr1} tel ={data.tel}/>
             <div className="icon_con"> 
                 {user && data && <CartButton item={data}/>}
                 <span>{formattedDate}</span>
@@ -39,25 +37,11 @@ const PlaceDetail = (props) =>{
            {imgurl &&  <img className ="firstImage" src={data.firstimage}/>}
            {!imgurl && <div className="no-image"/>}
             <DetailImage item={data}/> 
-            <div className="sub-con">
-                <h3 className="d_sub_title">소개</h3>
-                <p className="overview" dangerouslySetInnerHTML={overviewHTML}></p>
-            </div>
+            <Overview item={overviewHTML}/>
             <DetailIntro item={[data.contentid,data.contenttypeid]}/>
-            <div className="sub-con">
-                 <h3 className="d_sub_title">지도</h3>
-                 <AreaMap item={data}/>
-             </div>   
-             <div className="sub-con">  
-                 <h3 className="d_sub_title" style={{marginBottom:"0"}}>주변 추천 장소</h3>
-                <AroundPlace mapx={data.mapx} mapy={data.mapy}/>
-            </div>
-            <div className="sub-con"> 
-                <h3 className="d_sub_title">블로그 포스팅</h3>
-                <div className="blog-sub-con">  
-                    <BlogSearch item={data.title}/>
-                </div>
-            </div>
+            <AreaMap item={data}/>
+            <AroundPlace mapx={data.mapx} mapy={data.mapy}/>
+            <BlogSearch item={data.title}/>
             <PlaceRipple/>
         </div>
         </>

@@ -35,7 +35,10 @@ const AreaMap = (props) =>{
         infowindow.open(map, marker); 
     },[])
     return(
-        <div className="detail-map"></div>
+        <div className="sub-con">
+             <h3 className="d_sub_title">지도</h3>
+            <div className="detail-map"></div>
+        </div>   
     )
 }
 

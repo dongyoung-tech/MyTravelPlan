@@ -2,15 +2,13 @@ import React from "react";
 
 const DetailIntroItem = (props)=>{
     const data = props.item;
-    let infotextHTML = { __html: data.infotext };
-    if(data.contenttypeid == 32) infotextHTML = { __html: data.roomintro };
-    if(data.contenttypeid == 32){
-        return (
-            <li className="Intro-item"><strong>{data.roomtitle}</strong><span dangerouslySetInnerHTML={infotextHTML}></span></li>
-        )
-    }
+    const cat = props.cat;
+    const subIntro = cat==32?data.roomintro:cat==25?data.subdetailoverview:data.infotext;
+    const infotextHTML = { __html: subIntro};
+    const subTitle = cat==32?data.roomtitle:cat==25?data.subname:data.infoname;
+    console.log(cat);
     return(
-        <li className="Intro-item"><strong>{data.infoname}</strong><span dangerouslySetInnerHTML={infotextHTML}></span></li>
+        <li className="Intro-item"><strong>{subTitle}</strong><span dangerouslySetInnerHTML={infotextHTML}></span></li>
     )
 }
 

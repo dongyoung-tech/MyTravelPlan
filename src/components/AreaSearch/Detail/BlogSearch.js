@@ -35,11 +35,14 @@ const BlogSearch = (props) =>{
     }, []);
     
       return(
-        <>
-            {Data&& Data.map(item=>{
+          <div className="sub-con"> 
+            <h3 className="d_sub_title">블로그 포스팅</h3>
+            <div className="blog-sub-con">  
+                {Data&& Data.map(item=>{
                 return <BlogSearchItem item={item}/>
             })}
-        </>
+            </div>
+        </div>
       )
 }
 

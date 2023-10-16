@@ -1,33 +1,37 @@
 import React ,{useState,useEffect}from "react";
 import ImageItem from "../ImageItem";
 import DetailImageView from "./DetailImageView";  
-
+import axios from "axios";
 const DetailImage =(props)=>{  
 const [isLoading, setIsLoading] = useState(true);
 const [Data, setData] = useState([]);
-    useEffect(() => {
-        setIsLoading(true);
-        const apiKey = "yX8wx5nzKb42wtBThegyX7gb6G3xUCPCMfbzNYF1Gf0p0nSUn9ZeynPzokq9GNLvrFLmqQVbU9%2FQz9LckJpQLw%3D%3D";      
-        const apiEndpoint = `https://apis.data.go.kr/B551011/KorService1/detailImage1?
-serviceKey=${apiKey}&MobileOS=ETC&MobileApp=AppTest&_type=json&imageYN=Y&subImageYN=Y&numOfRows=10&pageNo=1&contentId=${props.item.contentid}`;
-        fetch(apiEndpoint)
-        .then(response => response.json())
-        .then(data => {
-            const elem = data.response.body.items.item;
-            setData(elem);
-            if(elem == undefined) setIsLoading(true);
-            else setIsLoading(false);
-        })
-        .catch(error => {
-            console.log(error);
-            setIsLoading(false); // 데이터 로딩 실패
-        });
-  }, []);
+const apiEndpoint = 'http://youngtour.dothome.co.kr/apiServer/DetailImage.php';
+const getData = async() =>{
+    try {
+      // 서버로 로그인 요청을 보냅니다.
+      const response = await axios.post(apiEndpoint, {
+        contentid: props.item.contentid,
+      }); 
+      if (response.status === 200) {
+          setData(response.data.response.body.items.item);
+          setIsLoading(false);
+      } else {
+        console.log('Request failed with status:', response.status);
+      }
+  
+    } catch (error) {
+      console.error('Login Failed:', error);
+    }
+  }
+useEffect(() => {
+  getData();
+}, [props.item]);
+
   let Ilength;
-  if(!isLoading) Ilength = (Data.length>4)?4:Data.length;
+  if(Data &&  Data.length>0) Ilength = (Data.length>4)?4:Data.length;
     return (
         <>
-            {!isLoading && 
+            {Data && 
             <div className="detail-image-con">
                 {Data.slice(0,Ilength).map((item,idx)=>{ 
                     return  <ImageItem item ={item} index={idx}/>
