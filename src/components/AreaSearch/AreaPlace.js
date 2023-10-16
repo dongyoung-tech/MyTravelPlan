@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Area.css";
+import axios from "axios";
 import {useLocation } from "react-router-dom";
 import Loading from "../UI/Loading.js";
 import CardPagination from "../UI/CardPagination";
@@ -10,24 +11,31 @@ const AreaPlace = () => {
   const Area = Number(searchParams.get('Area')?searchParams.get('Area'):1); // 현재 페이지 번호;
   const Sigungu = Number(searchParams.get('Sigungu')?searchParams.get('Sigungu'):1)
   const Category = Number(searchParams.get('Category')?searchParams.get('Category'):12)
-  const apiKey = "yX8wx5nzKb42wtBThegyX7gb6G3xUCPCMfbzNYF1Gf0p0nSUn9ZeynPzokq9GNLvrFLmqQVbU9%2FQz9LckJpQLw%3D%3D";
-  const apiEndpoint = `http://apis.data.go.kr/B551011/KorService1/areaBasedList1?serviceKey=${apiKey}&numOfRows=200&MobileOS=ETC&MobileApp=AppTest&_type=json&&arrange=Q
-&sigunguCode=${Sigungu}
-&contentTypeId=${Category}
-&pageNo=${1}
-&areaCode=${Area}`;
+  const apiEndpoint = 'http://youngtour.dothome.co.kr/apiServer/areaBased.php';
+  const getData = async() =>{
+    try {
+      // 서버로 로그인 요청을 보냅니다.
+      const response = await axios.post(apiEndpoint, {
+        areaCode: Area,
+        sigunguCode: Sigungu,
+        category: Category
+      });
+      
+      if (response.status === 200) {
+          console.log(response.data.response.body.items.item);
+          document.querySelector('.loading-con').style.display='none';
+          setData(response.data.response.body.items.item);
+      } else {
+        console.log('Request failed with status:', response.status);
+      }
+  
+    } catch (error) {
+      console.error('Login Failed:', error);
+    }
+  }
 useEffect(() => {
-  fetch(apiEndpoint)
-    .then((response) => response.json())
-    .then((data) => {
-      const elem = data.response.body.items.item;
-      setData(elem);
-      document.querySelector('.loading-con').classList.add('hide');
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-}, [apiEndpoint]);
+  getData();
+}, [Area,Sigungu,Category]);
   return (
     <>
         <Loading/>

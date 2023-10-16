@@ -1,4 +1,4 @@
-*{ font-family: 'Nanum',sans-serif;box-sizing: border-box; outline: none;}
+*{ font-family: 'Nanum',sans-serif;box-sizing: border-box; outline: none; font-weight: 100;}
 @font-face { /* 애플산돌고딕 폰트 적용 */
     font-family: "Nanum";
     src: url("../../asset/BmxsYIvpUqQIXk-9r2f09a43bSY.ttf") format("truetype");

@@ -1,25 +1,35 @@
 import React,{useState,useEffect} from "react";
 import Card from "../UI/Card.js";
+import axios from "axios";
 import '../AreaSearch/Area.css';
 import Loading from "../UI/Loading.js";
 import CardPagination from "../UI/CardPagination";
 const KeyWordList = (props) =>{
     const [Data,setData] = useState([]);  
-    const apiKey = "yX8wx5nzKb42wtBThegyX7gb6G3xUCPCMfbzNYF1Gf0p0nSUn9ZeynPzokq9GNLvrFLmqQVbU9%2FQz9LckJpQLw%3D%3D";
-    let apiEndpoint =`https://apis.data.go.kr/B551011/KorService1/searchKeyword1
-?serviceKey=${apiKey}&numOfRows=200&MobileOS=ETC&MobileApp=AppTest&_type=json&arrange=Q&keyword=${props.item}&pageNo=${1}`;
-  useEffect(() => {
-    fetch(apiEndpoint)
-      .then(response => response.json())
-      .then(data => {
-        const elem = data.response.body.items.item;
-        setData(elem);
-        document.querySelector('.loading-con').classList.add('hide');
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }, [props.item]); 
+    const apiEndpoint = 'http://youngtour.dothome.co.kr/apiServer/searchKeyword.php';
+const getData = async() =>{
+  console.log('SEND',props.item);
+  try {
+    // 서버로 로그인 요청을 보냅니다.
+    const response = await axios.post(apiEndpoint, {
+      keyword: props.item
+    });
+    
+    if (response.status === 200) {
+        console.log(response.data.response.body.items.item);
+        document.querySelector('.loading-con').style.display='none';
+        setData(response.data.response.body.items.item);
+    } else {
+      console.log('Request failed with status:', response.status);
+    }
+
+  } catch (error) {
+    console.error('Login Failed:', error);
+  }
+}
+useEffect(() => {
+getData();
+}, [props.item]);
 
     return(
       <>
