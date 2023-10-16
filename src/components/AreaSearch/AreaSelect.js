@@ -32,7 +32,6 @@ const AreaSelect = () => {
       });
   }, [Cat]);
 
-  console.log('AreaSelect');
   const handleCatChange = (newCat) => {
     setCat(newCat);
   };

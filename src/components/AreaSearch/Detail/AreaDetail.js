@@ -19,7 +19,6 @@ const AreaDetail = () => {
       }); 
       if (response.status === 200) {
           setData(response.data.response.body.items.item);
-          console.log(response.data.response.body.items.item);
           document.querySelector('.loading-con').classList.add('hide');
           setIsLoading(false);
       } else {

@@ -4,6 +4,8 @@ import Map from "./Map";
 import axios from "axios";
 import SelectedItem from "./SelectedItem";
 import CourseRepl from "../Ripple/CourseRepl";
+import CourseTopic from "./CourseTopic";
+import CourseSelected from "./CourseSelected";
 
 const CourseView = () => {
   const location = useLocation();
@@ -64,40 +66,15 @@ const CourseView = () => {
     }
   }
 
+if(!isLoading){
   return (
     <div className="Map-container" id="View">
-      {!isLoading && Data.length > 0 && (
-        <div className="course-topic">
-          <h2 className='list-topic'>{Data[0].name}</h2>
-          <h3 className='list-user'>{Data[0].user}</h3>
-          <div className="course-date">📅 <span>{Data[0].startdate}</span>~<span>{Data[0].lastdate}</span></div>
-          {username === Data[0].user && <button onClick={couseDelete}>삭제하기</button>}
-        </div>
-      )}
-      {!isLoading && Data.length > 0 && (
-        <div className="c_intro">
-          <h4>코스 소개</h4>
-          <p>{Data[0].intro}</p>
-        </div>
-      )}
-      {!isLoading && Data.length > 0 && (
-        <div className="c_map_con">
-          <h4>지도</h4>
-          <Map key="map" item={Data} />
-        </div>
-      )}
-      {!isLoading && Data.length > 0 && (
-        <div className="c_info_con">
-          <div className="c_info_p_list">
-            {Data[0].info.map((item, idx) => (
-              <SelectedItem idx={idx} item={item} key={idx} />
-            ))}
-          </div>
-          <CourseRepl item={Data[0]} />
-        </div>
-      )}
+        <CourseTopic Data={Data[0]} username={username} couseDelete={couseDelete}/>
+        <Map key="map" item={Data} />
+        <CourseSelected Data={Data[0]}/>
     </div>
   );
+}
 }
 
 export default CourseView;

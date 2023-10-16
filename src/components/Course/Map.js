@@ -67,7 +67,10 @@
         },[])
 
         return(
-            <div id="map"></div>
+            <div className="c_map_con">
+                 <h4>지도</h4>
+                  <div id="map"></div>
+             </div>
         )
         
     }

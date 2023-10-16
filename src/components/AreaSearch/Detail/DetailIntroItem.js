@@ -6,7 +6,6 @@ const DetailIntroItem = (props)=>{
     const subIntro = cat==32?data.roomintro:cat==25?data.subdetailoverview:data.infotext;
     const infotextHTML = { __html: subIntro};
     const subTitle = cat==32?data.roomtitle:cat==25?data.subname:data.infoname;
-    console.log(cat);
     return(
         <li className="Intro-item"><strong>{subTitle}</strong><span dangerouslySetInnerHTML={infotextHTML}></span></li>
     )

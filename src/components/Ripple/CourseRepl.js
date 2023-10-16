@@ -7,7 +7,6 @@ const CouseRepl = (props) =>{
     const [Data, setData] = useState([]); // 이곳에서 Data 상태를 정의
     const fetchComments = () => {
       setIsLoading(true);
-      console.log(props.item);
       // param이 변경될 때마다 apiEndpoint를 생성
       const apiEndpoint = `http://youngtour.dothome.co.kr/repl/Course-repl-list.php?parent=${props.item.name}`;
       fetch(apiEndpoint)

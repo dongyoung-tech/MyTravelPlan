@@ -15,7 +15,6 @@ const DetailIntro = (props) =>{
         }); 
         if (response.status === 200) {
             setData(response.data.response.body.items.item);
-            console.log(response.data.response.body.items.item);
             setIsLoading(false);
         } else {
           console.log('Request failed with status:', response.status);

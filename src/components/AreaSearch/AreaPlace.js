@@ -22,7 +22,6 @@ const AreaPlace = () => {
       });
       
       if (response.status === 200) {
-          console.log(response.data.response.body.items.item);
           document.querySelector('.loading-con').style.display='none';
           setData(response.data.response.body.items.item);
       } else {
