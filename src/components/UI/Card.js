@@ -11,7 +11,7 @@ const Card = (props) =>{
         <div className="place-box" onClick={clickHandler}>
         <div className='image-box'>
           {props.item.firstimage &&  <img src={props.item.firstimage}></img>}
-           {!props.item.firstimage &&  <div className="no-first-image"></div>}
+          {!props.item.firstimage &&  <div className="no-first-image"></div>}
            </div>
             <div className='text-box'>
                 <h4>{props.item.title}</h4>
