@@ -37,6 +37,7 @@
     background-image: url('../../image/select.png');
     background-position-x: right;
     background-position-y: center;
+    background-repeat: no-repeat;
 }
 .select-box button{
     border: none;

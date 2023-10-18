@@ -71,8 +71,8 @@ const JoinForm = () => {
   const LoginCheck = () =>{
     const regex = /^(?=.*[a-zA-Z])(?=.*[\W_])[\da-zA-Z\W_]*$/;
     const idPattern =  /^(?=.*[a-zA-Z])[a-zA-Z\d]+$/;
-    const useridText = document.forms[0].userid.value;
-    const userpassText = document.forms[0].pass.value;
+    const useridText = document.querySelector('.userid').value;
+    const userpassText = document.querySelector('.pass').value;
     if(idPattern.test(useridText))  {
       if(useridText.length >0){
         document.querySelector(".IdText").innerHTML = "";
