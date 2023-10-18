@@ -8,6 +8,6 @@ const Overview = (props) =>{
             <p className="overview" dangerouslySetInnerHTML={props.item}></p>
         </div>
         )
-    }
+        }
 }
 export default Overview;
