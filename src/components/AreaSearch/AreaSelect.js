@@ -45,7 +45,7 @@ const AreaSelect = () => {
 
   const placeListHandler = () => {
     setSelect([Cat, Cat2,Cat3]);
-    navigate(`/Area?Area=${Cat}&Sigungu=${Cat2}&Category=${Cat3}&Page=1`);
+    window.location.href=`/Area?Area=${Cat}&Sigungu=${Cat2}&Category=${Cat3}&Page=1`;
   };
   return (
     <>

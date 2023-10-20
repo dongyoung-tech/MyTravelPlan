@@ -32,9 +32,11 @@ const AreaPlace = () => {
       console.error('Login Failed:', error);
     }
   }
-useEffect(() => {
-  getData();
-}, [Area,Sigungu,Category]);
+  
+  useEffect(() => {
+    getData();
+  }, [Area,Sigungu,Category]);
+  
   return (
     <>
         <Loading/>
