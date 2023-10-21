@@ -39,12 +39,11 @@ const LoginForm =()=>{
     }
   };
 
-  const imageUrl = "http://youngtour.dothome.co.kr/images/letter-logo.png";
+
   return (
-    <div>
-      <div className='Area-photo'><p>로그인</p></div>
+    <div className='login-page'>
       <form className='login-con'>
-      <img src={imageUrl}></img>
+      <h2>마이트레블플랜</h2>
         <div className='login-box'>
           <div  className='login-sub-con'>
             <input
@@ -69,7 +68,7 @@ const LoginForm =()=>{
           <div>
           </div>
         </div>
-        <button onClick={handleLogin}>Login</button>
+        <button onClick={handleLogin}>로그인</button>
         <button onClick={NewMem}>회원가입</button>
       </form>
     </div>

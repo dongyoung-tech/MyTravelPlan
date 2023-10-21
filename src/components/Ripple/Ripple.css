@@ -54,8 +54,9 @@
     margin-left:5px;
 }
 .c_r_content{
-    font-size: 1rem;
+    font-size: 0.8rem;
     padding:5px 0;
+    margin-top: 5px;
 }
 .c_r_delete{
     float: right;

@@ -134,6 +134,9 @@
     .f_info{
         font-size: 0.9rem;
     }
+    .list-container{
+        margin : 50px auto;
+    }
 }
 @media(max-width:600px){
     .Map-view{

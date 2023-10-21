@@ -19,7 +19,7 @@ const RecommendPlace = props =>{
     return areacode[number];
   }
     return(
-        <div>
+        <div style={{marginBottom:'70px'}}>
           <div className="main-photo"><h2>MYTravelPlan<br></br>나만의 여행코스를 만들어 보세요!</h2>
             <div className="keyword">
                <form action="/Keyword">

@@ -32,9 +32,9 @@ const JoinForm = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    const useridText = document.forms[0].userid.value;
-    const userpassText = document.forms[0].pass.value;
-    const usernameText = document.forms[0].username.value;
+    const useridText = document.querySelector('.userid').value;
+    const userpassText = document.querySelector('.pass').value;
+    const usernameText = document.querySelector('.username').value;
     if(useridText == "") {alert('아이디를 입력해주세요'); return;}
     if(userpassText == "") {alert('비밀번호 를 입력해주세요'); return;}
     if(usernameText == "") {alert('닉네임을 입력해주세요'); return;}
@@ -103,9 +103,8 @@ const JoinForm = () => {
 
   }
   return (
-    <div>
-      <div className="Area-photo"><p>회원가입</p></div>
-      <img  className='j-logo'src="http://youngtour.dothome.co.kr/images/letter-logo.png"></img>
+    <div className="join-page">
+    <h2>마이트레블플랜</h2>
       <form className="join_frm" onSubmit={handleFormSubmit}>
         <div className="join-sub">
         <input
@@ -153,6 +152,7 @@ const JoinForm = () => {
             className="upfile"
             type="file"
             onChange={handleInputChange}
+            placeholder='프로필이미지'
           />
           </div>
           <button type="submit">회원가입</button>
