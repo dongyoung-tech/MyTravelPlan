@@ -6,7 +6,8 @@ import { Link, useLocation } from "react-router-dom";
 const CourseCon = () =>{
   const navigate = useNavigate();
   const ClickHandler = () =>{
-      navigate('MakeCourse');
+      if(user) navigate('MakeCourse');
+      else alert('로그인후 이용 해주세요.')
   }
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
@@ -103,14 +104,14 @@ const CourseCon = () =>{
           <h2>여행코스 목록</h2>        
             <div className="list-con">
               <ul className="list">
-                <li className="col">번호</li><li className="col">제목</li><li className="col">제작자</li><li className="col">등록일</li>
+                <li className="col col_topic">제목</li><li className="col">제작자</li><li className="col">등록일</li>
             </ul>
               {getCurrentPageData().map((item,index)=> {
               return <CourseItem key ={index} item={item}/>
             })}
             </div>
-            {<div className="pagination">{renderPageButtons()}</div>}
-            {user && <button onClick={ClickHandler}>코스 만들기</button>}
+            <div className="button_container">  <button onClick={ClickHandler}>코스 만들기</button></div>
+            {<div className="pagination col-page">{renderPageButtons()}</div>}
           </div>
     )
 }

@@ -39,7 +39,7 @@ const PlaceDetail = (props) =>{
             <DetailImage item={data}/> 
             <Overview item={overviewHTML}/>
             <DetailIntro item={[data.contentid,data.contenttypeid]}/>
-            <AreaMap item={data}/>
+            {data.addr1 && <AreaMap item={data}/>}
             <AroundPlace mapx={data.mapx} mapy={data.mapy}/>
             <BlogSearch item={data.title}/>
             <PlaceRipple/>

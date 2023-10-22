@@ -11,16 +11,15 @@ const PlaceRipple = () => {
   const [Data, setData] = useState([]); // 이곳에서 Data 상태를 정의
 
   const fetchComments = () => {
+    console.log('댓글 불러옴');
     getUrl();
-    setIsLoading(true);
     // param이 변경될 때마다 apiEndpoint를 생성
     const apiEndpoint = `http://youngtour.dothome.co.kr/repl/place-repl-list.php?parent=${num}`;
     fetch(apiEndpoint)
       .then((response) => response.json())
       .then((data) => {
-        setData(data); // Data 상태를 업데이트
-        setIsLoading(false);
-        console.log(data);
+          setData(data); // Data 상태를 업데이트
+          setIsLoading(false);
       })
       .catch((error) => {
         console.log(error);
@@ -44,7 +43,7 @@ const PlaceRipple = () => {
     <div className="repl-container">
       <p className="p_r_title">댓글</p>
       <div>
-        {!isLoading &&
+        {!isLoading && Data &&
           Data.map((el, index) => {
             return <PlaceRippleList key={index} item={el} commentLoad={fetchComments}/>
           })}

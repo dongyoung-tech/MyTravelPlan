@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import './user.css';
 import CartList from "./CartList";
 import CourseList from "./CourseList";
-
+import UserTitle from "./UserTitle";
 const User = () => {
   const [param, setParam] = useState();
   const [isLoad,setLoad] = useState(true);
@@ -39,25 +39,13 @@ const User = () => {
       getUser(param);
     }
   }, [param, location.search]);
-  const modifyMove =()=>{
-    window.location.href='Login/Modify';
-  } 
+
   if(isLoad) return;
   return (
     <>
     <div className="Area-photo"><p>회원정보</p></div>
     <div className='user-info'>
-      <div className="user_p_info"> 
-           {userData && userData.file_copied && <img className="profile-image"
-            src={`http://youngtour.dothome.co.kr/upload/${userData.file_copied}`} alt="프로필 이미지" />}
-            {!userData || !userData.file_copied && <div className="non_profile_image"></div>}
-           <div className="user_p_detail">
-            <p>이름 : {userData.name}</p>
-              <p>아이디 : {userData.id}</p>
-              {user && userData.id == user.id  && <button onClick={modifyMove}>회원정보수정</button>}
-           </div>
-           <p className="user-intro">{userData.intro}</p>
-      </div> 
+      <UserTitle user={user} item={userData}/>
       <div className="user_con_list">
          <h3 className="sub-topic">찜한 여행지</h3>
           {<CartList item={userData.id}/>}

@@ -30,7 +30,8 @@ const FreeBardList = () =>{
 
       const navigate = useNavigate();
       const InsertMove = () =>{
-        navigate(`FreeBoardInsert`);
+        if(user) navigate(`FreeBoardInsert`);
+        else alert('로그인 후 이용해주세요.')
       } 
       const getCurrentPageData = () => {
         const startIndex = (pageNo - 1) * numOfRows;
@@ -99,17 +100,16 @@ const FreeBardList = () =>{
       };
     return(
       <>
-        <h2>게시판</h2>
+        <h2>자유 게시판</h2>
       <div className="list-con">
            <ul className="list">
-            <li className="col">글번호</li><li className="col">글쓴이</li>
-            <li className="col">글제목</li> <li className="col">등록일</li> 
+             <li className="col col_topic">글제목</li> <li className="col">글쓴이</li> <li className="col">등록일</li> 
            </ul>
             {getCurrentPageData().map((item,idx)=>{
               return <FreeBoardItem key={idx} item={item}/> 
             })}
-            {<div className="pagination">{renderPageButtons()}</div>}
-              {user&& <button onClick={InsertMove}>글쓰기</button>}
+            <div className='button_container'><button onClick={InsertMove}>글쓰기</button></div>
+            {<div className="pagination col-page">{renderPageButtons()}</div>}
         </div>
         </>
     )

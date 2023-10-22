@@ -60,8 +60,11 @@ const FreeBoardView = () =>{
       
         <div>
         {!isLoading && <Content items={Data[0]}/>}
-        {!isLoading && user && user.id == Data[0].id && <button onClick={MoveHandler}>수정하기</button>}
-        {!isLoading && user && user.id == Data[0].id && <button onClick={onDelete}>삭제하기</button>}
+        {!isLoading && user && user.id == Data[0].id && 
+        <div className="button_container">
+          <button onClick={MoveHandler}>수정하기</button>
+          <button style={{margin:"0 10px"}}onClick={onDelete}>삭제하기</button>
+        </div>}
         </div>
     )
 }

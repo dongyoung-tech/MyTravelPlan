@@ -20,15 +20,14 @@ const CourseReplItem = (props) =>{
                 },
               }
             );
-            if (response.data === "success") {
-              // 댓글 제출 성공 시, 부모 컴포넌트로 콜백 함수 호출
-              // 입력 필드 초기화
-              props.onCommentLoad();
-            } else {
-              console.error("Insert Failed");
+            props.onCommentLoad();
+            if (response.data !== "success") {
+  
+              console.error("Delete Failed");
             }
           } catch (error) {
-            console.error("Insert Failed:", error);
+            console.error("Delete Failed:", error);
+
           }
     }
     return(
@@ -36,7 +35,7 @@ const CourseReplItem = (props) =>{
             <a href={`/User?user=${props.items.id}`}><span className="c_r_user">{props.items.name}</span></a>
             <span className="c_r_regist">{props.items.regist}</span>
             <p className="c_r_content">{props.items.content}</p>
-            {Del && <span className="c_r_delete" onClick={deleteHandler}>삭제하기</span>}
+            {Del && <button className="c_r_delete" onClick={deleteHandler}>x</button>}
         </div>
     )
 }

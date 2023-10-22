@@ -11,7 +11,7 @@ const CourseItem = (props) =>{
 
     return(
          <ul className="list" onClick={clickHandler}>
-            <li className="col">{props.item.num}</li><li className="col">{props.item.name}</li>
+      <li className="col col_topic">{props.item.name}</li>
             <li className="col">{props.item.user}</li><li className="col">{props.item.regist}</li>
          </ul>
     )

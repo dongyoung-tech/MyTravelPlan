@@ -19,10 +19,30 @@ input{border: none;}
     line-height: 30px;
     float: left;
 }
+.u_line{
+    display: block;
+    margin: 10px auto;
+    width: 50px;
+    height: 5px;
+    background: #598bf1;
+}
+.col_topic{
+    width: 50%;
+    text-align: left;
+    padding-left: 20px;
+}
+.col-page{
+    margin-top: 10px;
+}
+.button_container{
+    text-align: right;
+    margin-top: 10px;
+}
 .list:not(:first-child):hover{
     background-color: #f2f2f2;
 }
 .list-container{width: 1000px; margin:80px auto; text-align: center;}
+
 .list-con{width: 100%; margin-top:30px}
 .c_map_con{
     width: 100%;
@@ -35,8 +55,6 @@ input{border: none;}
     appearance: none;
     border: none;
     color: white;
-    margin: 10px;
-
 }
 #map{
     width: 100%;
