@@ -16,6 +16,7 @@ const PlaceRippleForm = (props) => {
     } 
     const username = user.name;
     const id = user.id;
+    const profile = user.file_copied || 'profile.png';
     const checkedInput =  document.querySelector(`input[name="rate"]:checked`);
     try {
       const content = document.querySelector(".repl-input").value;
@@ -29,7 +30,8 @@ const PlaceRippleForm = (props) => {
           id,
           content,
           username,
-          rate
+          rate,
+          profile
         },
         {
           headers: {

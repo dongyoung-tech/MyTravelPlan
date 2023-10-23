@@ -16,6 +16,7 @@ const CourseReplForm = (props) =>{
         }
         const username = user.name;
         const id = user.id;
+        const profile = user.file_copied || 'profile.png';
         try {
             // 서버로 요청을 보냅니다.
             const response = await axios.post(
@@ -25,6 +26,7 @@ const CourseReplForm = (props) =>{
                 id,
                 content,
                 username,
+                profile
               },
               {
                 headers: {

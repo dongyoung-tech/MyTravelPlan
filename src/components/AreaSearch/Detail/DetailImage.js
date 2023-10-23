@@ -34,11 +34,11 @@ useEffect(() => {
             {Data && 
             <div className="detail-image-con">
                 {Data.slice(0,Ilength).map((item,idx)=>{ 
-                    return  <ImageItem item ={item} index={idx}/>
+                    return  <ImageItem item ={item} index={idx} key={idx}/>
                 })}
             </div>
             }
-            <DetailImageView item={Data}/>
+            <DetailImageView item={Data} key ='view'/>
         </>
     )
 }

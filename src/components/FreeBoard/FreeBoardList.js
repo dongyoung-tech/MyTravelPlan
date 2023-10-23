@@ -60,7 +60,7 @@ const FreeBardList = () =>{
             }}
             className='arrow'
           >
-              <i class="fa-solid fa-angle-left"></i>
+              <i className="fa-solid fa-angle-left"></i>
           </Link>
           );
         }
@@ -90,7 +90,7 @@ const FreeBardList = () =>{
             }}
             className='arrow'
           >
-              <i class="fa-solid fa-angle-right"></i>
+              <i className="fa-solid fa-angle-right"></i>
           </Link>
           );
         }

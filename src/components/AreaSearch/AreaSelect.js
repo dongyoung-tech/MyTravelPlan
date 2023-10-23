@@ -53,10 +53,10 @@ const AreaSelect = () => {
       <div className='Area-Container'>
         <h3 className='result-text'>관광지 목록</h3>
         <div className='select-box'>
-          <AreaSelection handleCatChange ={handleCatChange} area={areacode} areaTxt={areaText} cat={Cat}/>
-          <SigunguSelection handleCatChange2={handleCatChange2} cat2={Cat2} optionData={optionData}/>
-          <CategorySelection handleCatChange3={handleCatChange3} cat3={Cat3} contentType={contentType}/>
-          <button onClick={placeListHandler}><i class="fa-solid fa-magnifying-glass"></i> 검색</button>
+          <AreaSelection handleCatChange ={handleCatChange} area={areacode} areaTxt={areaText} cat={Cat} key='Cat'/>
+          <SigunguSelection handleCatChange2={handleCatChange2} cat2={Cat2} optionData={optionData} key='Cat2'/>
+          <CategorySelection handleCatChange3={handleCatChange3} cat3={Cat3} contentType={contentType} key='Cat3'/>
+          <button onClick={placeListHandler}><i className="fa-solid fa-magnifying-glass"></i> 검색</button>
         </div>
         <div>
           <AreaPlace item={selected} key={"areaplace"} />

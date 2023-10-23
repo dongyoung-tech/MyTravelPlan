@@ -30,7 +30,7 @@ return(
         </div>
         <form action="/Keyword">
             <input name="keyword" placeholder="여행지 이름을 입력해주세요"></input>
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            <button><i className="fa-solid fa-magnifying-glass"></i></button>
         </form>
         <ul>
             <a href="/"><li>메인</li></a>

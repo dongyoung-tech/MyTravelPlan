@@ -32,6 +32,7 @@ const CourseReplItem = (props) =>{
     }
     return(
         <div className="c_repl_item">
+            {props.items.profile && <img src={`http://youngtour.dothome.co.kr/upload/${props.items.profile}`}></img>}
             <a href={`/User?user=${props.items.id}`}><span className="c_r_user">{props.items.name}</span></a>
             <span className="c_r_regist">{props.items.regist}</span>
             <p className="c_r_content">{props.items.content}</p>

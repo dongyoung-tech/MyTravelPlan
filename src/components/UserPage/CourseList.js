@@ -27,8 +27,8 @@ const CourseList = (props) =>{
    else{
     return(
         <>
-        {!isLoading && data.map(item=>{
-            return <CourseItem item ={item}/>
+        {!isLoading && data.map((item,idx)=>{
+            return <CourseItem item ={item} key ={idx}/>
         })
         }
         </>

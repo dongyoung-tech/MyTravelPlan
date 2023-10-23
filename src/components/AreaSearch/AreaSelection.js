@@ -7,7 +7,7 @@ return(
     <h5>지역</h5>
         <select onChange={(e) => props.handleCatChange(e.target.value)} value={props.cat}>
             {props.area.map((item, index) => (
-            <option value={item} key={item}>
+            <option value={item} key={index}>
                 {props.areaTxt[index]}
             </option> ))}
         </select>

@@ -15,18 +15,18 @@ const Ratecon = () =>{
       });
     }
     return (
-        <div class='rate-con'>
+        <div className='rate-con'>
         평점 
         <input type='radio' name='rate' id='1' value='1'></input>
-        <label for="1"><i class="fa-solid fa-star"></i></label> 
+        <label htmlFor="1"><i className="fa-solid fa-star"></i></label> 
         <input type='radio' name='rate' id='2' value='2'></input>
-        <label for="2"><i class="fa-solid fa-star"></i></label> 
+        <label htmlFor="2"><i className="fa-solid fa-star"></i></label> 
         <input type='radio' name='rate' id='3' value='3'></input>
-        <label for="3"><i class="fa-solid fa-star"></i></label> 
+        <label htmlFor="3"><i className="fa-solid fa-star"></i></label> 
         <input type='radio' name='rate' id='4' value='4'></input>
-        <label for="4"><i class="fa-solid fa-star"></i></label> 
+        <label htmlFor="4"><i className="fa-solid fa-star"></i></label> 
         <input type='radio' name='rate' id='5' value='5'></input>
-        <label for="5"><i class="fa-solid fa-star"></i></label> 
+        <label htmlFor="5"><i className="fa-solid fa-star"></i></label> 
     </div>
     )
 }

@@ -26,11 +26,11 @@ const FilterList = () =>{
                     <span className='search-icon' onClick={handleClick}>
                         <i className="fa-solid fa-magnifying-glass"></i>
                     </span>
-                    {isClicked && <SearchFeild/>}
-                    <span className="user-icon"><i className="fa-regular fa-user"></i><LoginInfo item={user}/></span>
+                    {isClicked && <SearchFeild key='search'/>}
+                    <span className="user-icon"><i className="fa-regular fa-user"></i><LoginInfo item={user} key='login'/></span>
                     <div className="side-button" onClick={sideHandler}></div>
             </div>
-            <SideButton/>
+            <SideButton key='side'/>
         </div>
     );
 }

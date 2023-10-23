@@ -13,7 +13,7 @@ const CartItem = (props) =>{
             <div className="cart-item-info">
                 <b className="cart-item-title">{props.item.title}</b>
                 <b className="cart-item-addr">{props.item.address}</b>
-                { props.user && <button onClick={(e) => deleteItem(e)}><i class="fa-regular fa-trash-can"></i></button>}
+                { props.user && <button onClick={(e) => deleteItem(e)}><i className="fa-regular fa-trash-can"></i></button>}
             </div>
         </div>
         </a>

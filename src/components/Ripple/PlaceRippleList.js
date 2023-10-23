@@ -43,6 +43,7 @@ const PlaceRippleList = (props) =>{
     }
     return(
         <div className="p_list_con">
+            {props.item.profile && <img src={`http://youngtour.dothome.co.kr/upload/${props.item.profile}`}></img>}
             <a href={`/User?user=${props.item.id}`}><span className="p_list_user">{props.item.name}</span></a>
             <span className="p_list_regist">{props.item.regist}</span>
             <span className="p_list_rate">{setRate()}</span>

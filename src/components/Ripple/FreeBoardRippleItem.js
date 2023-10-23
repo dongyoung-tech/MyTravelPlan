@@ -33,6 +33,7 @@ const FreeBardRippleItem = (props) =>{
     }
     return(
         <div className="repl-list">
+            {props.item.profile && <img src={`http://youngtour.dothome.co.kr/upload/${props.item.profile}`}></img>}
             <a href={`/User?user=${props.item.id}`}><span className="r_item_title">{props.item.name}</span></a>
             <span className="r_item_regist">{props.item.regist}</span>
             <span className="r_item_content">{props.item.content}</span>

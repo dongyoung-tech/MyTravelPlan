@@ -187,8 +187,8 @@
     margin: 5px;
 }
 @media(max-width:1000px){
-    .user-photo{
-        margin: 50px auto;
+    .user-photo , .user_p_info .non_profile_image{
+        margin: 5px auto;
     }
     .user-info{
         width: 100%;
@@ -239,7 +239,9 @@
     }
     .user-intro{
         width: 90%;
-        margin: 0 auto;
+        margin: 10px auto;
     }
-    
+    .user_p_detail p{
+        margin: 2px;
+    }
 }

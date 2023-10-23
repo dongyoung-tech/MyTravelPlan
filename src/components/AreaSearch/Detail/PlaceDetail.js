@@ -29,20 +29,20 @@ const PlaceDetail = (props) =>{
             </p>
          </div>
         <div className ="detail-con">
-            <DetailTitle title={data.title} addr1 = {data.addr1} tel ={data.tel}/>
+            <DetailTitle title={data.title} addr1 = {data.addr1} tel ={data.tel} key='Title'/>
             <div className="icon_con"> 
                 {user && data && <CartButton item={data}/>}
                 <span>{formattedDate}</span>
             </div>
            {imgurl &&  <img className ="firstImage" src={data.firstimage}/>}
            {!imgurl && <div className="no-image"/>}
-            <DetailImage item={data}/> 
-            <Overview item={overviewHTML}/>
-            <DetailIntro item={[data.contentid,data.contenttypeid]}/>
-            {data.addr1 && <AreaMap item={data}/>}
-            <AroundPlace mapx={data.mapx} mapy={data.mapy}/>
-            <BlogSearch item={data.title}/>
-            <PlaceRipple/>
+            <DetailImage item={data} key ='image'/> 
+            <Overview item={overviewHTML} key='overviwe'/>
+            <DetailIntro item={[data.contentid,data.contenttypeid]} key ='intro'/>
+            {data.addr1 && <AreaMap item={data} key='map'/>}
+            <AroundPlace mapx={data.mapx} mapy={data.mapy} key ='around'/>
+            <BlogSearch item={data.title} key='blog'/>
+            <PlaceRipple key='ripple'/>
         </div>
         </>
     )

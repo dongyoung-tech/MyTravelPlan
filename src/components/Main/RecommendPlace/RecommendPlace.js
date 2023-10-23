@@ -24,7 +24,7 @@ const RecommendPlace = props =>{
             <div className="keyword">
                <form action="/Keyword">
                 <input name="keyword" placeholder="검색어를 입력하세요"></input>
-                <button onClick={KeyWordHandler}><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button onClick={KeyWordHandler}><i className="fa-solid fa-magnifying-glass"></i></button>
                </form>
             </div>
           </div>

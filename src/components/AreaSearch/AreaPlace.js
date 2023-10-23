@@ -39,8 +39,8 @@ const AreaPlace = () => {
   
   return (
     <>
-        <Loading/>
-        {Data && Data.length > 0 && <CardPagination data={Data} Area={Area} Sigungu={Sigungu} Category ={Category}/>}
+        <Loading key='loading'/>
+        {Data && Data.length > 0 && <CardPagination data={Data} Area={Area} Sigungu={Sigungu} Category ={Category} key='page'/>}
         {!Data  && <div className="error-page">검색 결과가 없습니다. 다른 키워드를 입력해주세요.</div>}
     </>
   );

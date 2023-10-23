@@ -8,7 +8,6 @@ const KeyWordList = (props) =>{
     const [Data,setData] = useState([]);  
     const apiEndpoint = 'http://youngtour.dothome.co.kr/apiServer/searchKeyword.php';
 const getData = async() =>{
-  console.log('SEND',props.item);
   try {
     // 서버로 로그인 요청을 보냅니다.
     const response = await axios.post(apiEndpoint, {
@@ -16,7 +15,6 @@ const getData = async() =>{
     });
     
     if (response.status === 200) {
-        console.log(response.data.response.body.items.item);
         document.querySelector('.loading-con').style.display='none';
         setData(response.data.response.body.items.item);
     } else {

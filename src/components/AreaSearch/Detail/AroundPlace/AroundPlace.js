@@ -37,8 +37,8 @@ serviceKey=${apiKey}&numOfRows=4&pageNo=1&MobileOS=ETC&MobileApp=AppTest&_type=j
       <div className="sub-con">  
         <h3 className="d_sub_title" style={{marginBottom:"0"}}>주변 추천 장소</h3>
         <div className="around_con">
-              {!isLoading && Data.map(item=>{
-                return <Card item={item}/>
+              {!isLoading && Data.map((item,idx)=>{
+                return <Card item={item} key={idx}/>
               })}
         </div>
       </div>
