@@ -17,9 +17,10 @@ const SelectItem = (props) =>{
         }; // 추가하려는 객체
         Dispatch(addItem(newItem)); // 액션 디스패치
     }
+    const imgSrc = props.item.firstimage?props.item.firstimage:`http://youngtour.dothome.co.kr/images/error.png`;
     return(
         <div className ='Select-Item'onClick={clickHandler}>
-            <img src={props.item.firstimage}></img>
+            <img src={imgSrc}></img>
             <div className='Select-text-box'>
                 <h4>{props.item.title}</h4>
                 <h5>{props.item.addr1}</h5>

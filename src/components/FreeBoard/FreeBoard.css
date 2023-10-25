@@ -76,6 +76,7 @@
     width: 100%;
     color: black;
     font-size: 13px;
+    padding-left: 5px;
 }
 .r_delete{
     position: absolute;
@@ -120,7 +121,6 @@
     padding: 10px;
 }
 .list-con{
-    width: 95%;
     margin: 20px auto;
 }
 .col{

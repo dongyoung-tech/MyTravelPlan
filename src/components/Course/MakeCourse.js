@@ -2,10 +2,21 @@ import React ,{useState} from "react";
 import MakeMap from "./MakeMap";
 import SelectList from "./SelectList";
 import CourseInput from "./CourseInput";
+import { useLocation ,useNavigate } from "react-router-dom";
 const MakeCourse = () =>{
-    const [keyword,setKeyword] = useState('서울');
-    const keyWordHandler = ()=>{
-        setKeyword(document.querySelector('.course_search_form input').value);
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const [keyword,setKeyword] = useState(searchParams.get('keyword') || '서울');
+    const Navigate = useNavigate();
+    const keyWordHandler = (event)=>{
+        event.preventDefault();
+        const searchkey = document.querySelector('.search_input').value;
+        if(searchkey.trim().length==0){
+            alert('한글자 이상 입력해주세요!');
+            return;
+        }
+        setKeyword(searchkey);
+        Navigate(`/Course/MakeCourse?keyword=${searchkey}`);
     }
     return(
         <>
@@ -15,10 +26,10 @@ const MakeCourse = () =>{
                    <MakeMap/>
                </div>
                 <div className="select_con">
-                    <div className="course_search_form">
-                        <input placeholder="키워드를 입력해주세요"></input>
+                    <form className="course_search_form" action="/Course/MakeCourse" onSubmit={keyWordHandler}>
+                        <input placeholder="키워드를 입력해주세요" name="keyword" className="search_input"></input>
                         <button onClick={keyWordHandler}><i className="fa-solid fa-magnifying-glass"></i></button>
-                    </div>
+                    </form>
                     <SelectList keyword={keyword}/>
                 </div>
                 <CourseInput/>      

@@ -63,7 +63,7 @@ const FreeBoardModify = () =>{
       };
     if(!isLoading){
         return(
-            <div style={{marginTop:"50px",padding:"10px"}}>
+            <div style={{padding:"10px"}}>
                 <h2>수정하기</h2>
                 <input className ='f_title_input'placeholder={`이전 제목 : ${Data[0].topic}`} onChange={TopicHandler}></input>
                 <textarea className="f_content_area" placeholder="글내용" onChange={TextHandler}>{Data[0].content}</textarea>

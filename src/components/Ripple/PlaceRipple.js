@@ -11,7 +11,6 @@ const PlaceRipple = () => {
   const [Data, setData] = useState([]); // 이곳에서 Data 상태를 정의
 
   const fetchComments = () => {
-    console.log('댓글 불러옴');
     getUrl();
     // param이 변경될 때마다 apiEndpoint를 생성
     const apiEndpoint = `http://youngtour.dothome.co.kr/repl/place-repl-list.php?parent=${num}`;

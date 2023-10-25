@@ -141,6 +141,17 @@ input{border: none;}
     overflow: scroll;
     width: 100%;
     height: calc(100% - 50px);
+    position: relative;
+}
+.select_list .loading-con{
+    position: sticky;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: black;
+    opacity: 0.9;
 }
 .select_con{
     width: 300px;
@@ -271,7 +282,9 @@ input{border: none;}
     .course_search_form{
         width: 100%;
     }
-    
+    .select_list .loading-con{
+        position: absolute;
+    }
     .course_search_form button{
         width: 70px;
     }

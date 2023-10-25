@@ -57,14 +57,12 @@ a{color: black;text-decoration: none;}
     color: #504e4e;
     width: 100%;
     overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    border-bottom: 1px solid #d2d2d2;
+    padding-bottom: 10px;
     display: flex;
     justify-content: center;
-    border-bottom: 1px solid #d2d2d2;
-    padding-bottom: 20px;
 }
-.d_address li{margin: 0 10px;}
+.d_address li{margin: 3px 5px;}
 .d_address span{
     color: black;
     margin-right: 5px;
@@ -173,37 +171,29 @@ a{color: black;text-decoration: none;}
 .Intro-item{
     text-align: left;
     list-style: outside;
-    width: 50%;
+    width: 100%;
     float: left;
-    margin-bottom: 15px;
-    padding-right: 50px;
+    margin: 0;
+    border-bottom: 1px solid #d2d2d2;
+    font-size: 0.9rem;
+}
+.Intro-item th{
+    background-color: #f2f2f2;
+    width: 200px;
+    text-align: center;
+    padding: 5px;
+}
+.Intro-item td{
+    padding: 10px;
 }
 .Intro-list{
-    padding-left: 20px;
-    display: inline-block;
     width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-top: 1px solid #d2d2d2;
+    table-layout: fixed;
 }
-.Intro-item::marker{
-    color: #598bf1;
-}
-.Intro-item strong{
-    margin-right: 5px;
-}
-.Intro-item span{
-    font-size: 0.9rem;
-    color: #808080;
-}
-.Intro-item strong{
-    width: 125px;
-    display: inline-block;
-    font-size: 0.9rem;
-}
-.Intro-item span{
-    font-size: 0.8rem;
-    color: #808080;
-    float: right;
-    width: calc(100% - 130px);
-}
+
 .detail-image-view-con{
     display: none;
     position: fixed;
@@ -291,8 +281,8 @@ a{color: black;text-decoration: none;}
     }
     .detail-image-con img{
         width: calc(94%/4);
-    height: 85%;
-    margin: 1%;
+        height: 85%;
+        margin: 1%;
     }
     .detail-image-con img:first-child{
         margin-left: 0;
@@ -332,6 +322,10 @@ a{color: black;text-decoration: none;}
         width: 100%;
         padding: 0;
     }
+    .Intro-item th{
+        width: 150px;
+    }
+
     .d_title{
         font-size: 1.5rem;
         margin-top: 50px;
@@ -364,12 +358,10 @@ a{color: black;text-decoration: none;}
     .around_con .place-box{
        height: 150px;
     }
-    .Intro-item strong{
+    .Intro-item th{
         width: 100px;
     }
-    .Intro-item span{
-        width: calc( 100% - 110px);
-    }
+
     .d_title{
         font-size: 1.2rem;
     }

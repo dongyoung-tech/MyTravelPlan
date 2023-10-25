@@ -29,13 +29,13 @@ const DetailIntro = (props) =>{
   }, [props.item]);
       if(data){
         return(
-            <div className="sub-con">
+            <div className="sub-con" style={{borderBottom:"0px"}}>
                 <h3 className="d_sub_title">정보</h3>
-                <ul className="Intro-list">
+                <table className="Intro-list">
                 {!isLoading && data.map((item,idx)=>{
                     return <DetailIntroItem item={item} key ={idx} cat={props.item[1]}/>
                 })}
-                </ul>
+                </table>
             </div>
           )
       }

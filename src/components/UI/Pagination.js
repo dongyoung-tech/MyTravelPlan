@@ -1,6 +1,6 @@
 import React ,{useState,useEffect} from "react";
 import SelectItem from "../Course/SelectItem";
-
+import Loading from "../UI/Loading";
 const Pagination = (props) =>{
     const [pageNo, setPageNo] = useState(1); // 현재 페이지 번호;
     const [totalDataCount,setTotalDataCount] = useState(1);
@@ -18,6 +18,7 @@ const Pagination = (props) =>{
         const endIndex = startIndex + numOfRows;
         return props.data.slice(startIndex, endIndex);
     }
+    
     
     function renderPageButtons (){
         const buttons = [];
@@ -47,7 +48,9 @@ const Pagination = (props) =>{
     
               <button
               key={i}
-              onClick={() => changePage(i)}
+              onClick={() => {
+                changePage(i);
+              }}
               className={i === pageNo ? "active" : ""}
             >
               {i} 
@@ -71,9 +74,11 @@ const Pagination = (props) =>{
       
         return buttons;
     }
+    
     return(
        <>
            <div className="select_list">
+           <Loading/>
             {props.data && getCurrentPageData().map((item, index) => {
                 return <SelectItem key={index} item={item}  />
               })}

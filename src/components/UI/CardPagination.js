@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "./Card";
 import { Link, useLocation } from "react-router-dom";
+import CardContainer from "./CardContainer";
 
 const CardPagination = (props) => {
   const location = useLocation();
@@ -92,15 +93,11 @@ const CardPagination = (props) => {
 
     return buttons;
   };
+ 
 
   return (
     <>
-      <div className="Card-Container">
-        {getCurrentPageData().map((item, index) => {
-          return <Card key={index} item={item} />;
-        })}
-
-      </div>
+      <CardContainer item={getCurrentPageData()}></CardContainer>
       <div className="pagination">{renderPageButtons()}</div>
     </>
   );

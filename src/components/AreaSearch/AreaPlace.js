@@ -13,6 +13,7 @@ const AreaPlace = () => {
   const Category = Number(searchParams.get('Category')?searchParams.get('Category'):12)
   const apiEndpoint = 'http://youngtour.dothome.co.kr/apiServer/areaBased.php';
   const getData = async() =>{
+    console.log('요청');
     try {
       // 서버로 로그인 요청을 보냅니다.
       const response = await axios.post(apiEndpoint, {
