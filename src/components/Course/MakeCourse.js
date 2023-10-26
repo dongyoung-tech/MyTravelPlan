@@ -12,7 +12,7 @@ const MakeCourse = () =>{
         event.preventDefault();
         const searchkey = document.querySelector('.search_input').value;
         if(searchkey.trim().length==0){
-            alert('한글자 이상 입력해주세요!');
+            alert('한 글자 이상 입력해주세요!');
             return;
         }
         setKeyword(searchkey);
