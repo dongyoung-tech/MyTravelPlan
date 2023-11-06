@@ -22,7 +22,7 @@ const PlaceRippleForm = (props) => {
       const content = document.querySelector(".repl-input").value;
       let InputValue = (checkedInput == null)?0:checkedInput.value;
       let rate = InputValue;
-      // 서버로 요청을 보냅니다.
+
       const response = await axios.post(
         "http://youngtour.dothome.co.kr/repl/place-repl-insert.php",
         {
