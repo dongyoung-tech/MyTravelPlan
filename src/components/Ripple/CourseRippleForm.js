@@ -18,7 +18,6 @@ const CourseReplForm = (props) =>{
         const id = user.id;
         const profile = user.file_copied || 'profile.png';
         try {
-            // 서버로 요청을 보냅니다.
             const response = await axios.post(
               "http://youngtour.dothome.co.kr/repl/Course-ripple-insert.php",
               {
