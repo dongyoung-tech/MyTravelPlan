@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Map from "./Map";
 import axios from "axios";
-import SelectedItem from "./SelectedItem";
 import CourseTopic from "./CourseTopic";
 import CourseSelected from "./CourseSelected";
 
