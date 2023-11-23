@@ -4,7 +4,6 @@ import { Routes, Route } from 'react-router-dom';
 import FreeBoardView from './FreeBoardView';
 import FreeBoardInsert from './FreeBoardInsert';
 import FreeBoardModify from './FreeBoardModify';
-import Footer from '../Main/Footer';
 const FreeBoard = () => { 
 
     return(
